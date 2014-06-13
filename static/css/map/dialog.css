@@ -1,0 +1,36 @@
+.dialog-view { 
+	width: 500px;
+	display: none; 
+	background: white;
+	padding: 20px 40px;
+}
+
+.dialog-view h3 {
+	text-align: center;
+}
+
+.dialog-view tr {
+	text-align: left;
+}
+
+.dialog-view input[type=text] {
+	width: 75%;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.dialog-view button {
+	margin: 10px;
+}
+.dialog-view button.success {
+	float: right;
+}
+
+.dialog-view #share-link {
+	width: 75%;
+	margin: 0 auto;
+}
+
+.dialog-btns {
+	height: 56px;
+}

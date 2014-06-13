@@ -1,0 +1,16 @@
+<html>
+	<body>
+		<div style="background-image: url('app.spatialcollective.com/static/images/bg.jpg'); border-radius: 5px; padding: 20px; font-size: 1.2em;">
+			<img style="margin:0 auto; width: 150px; display: block;" src="http://app.spatialcollective.com/static/images/logoTransparent.png">
+			{% block content %}
+				<p>Your account is now set up under the username "{{ username }}". Log into your account to create your own interactive maps.</p>
+				<p>If you have any questions feel free to contact us by emailing <a href="mailto:connect@spatialcollective.com">connect@spatialcollective.com</a> or by filling out the contact form <a href=" http://www.spatialcollective.com/connect/">here</a></p>
+			{% endblock %}
+			{% block button %}
+				<div style='width: 100%; display: block;'>
+					<a href="http://app.spatialcollective.com" style="width: 100px; padding: 10px 15px; margin: 30px auto 0 auto; text-decoration: none; border-radius: 40px; color: #333; font-size: 1.2em; background-color: rgb(165, 192, 148); border: none; display: block; text-align: center;">Get Started</a>
+				</div>
+			{% endblock %}
+		</div>
+	</body>
+</html>

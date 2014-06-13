@@ -1,0 +1,30 @@
+{% extends "base_map/base.html" %}
+
+{% block content %}
+    <div id="small-box">
+        {% if validlink %}
+            <h1 class="page-title text-center">Change password</h1>
+            <p class='text-center'>Please enter your new password twice</p>
+            <form class="text-center" action="" method="POST">
+                {% csrf_token %}
+                <table>
+                    <tr><td colspan="2">{{ form.new_password1.errors }}</td></tr>
+                    <tr>
+                        <td><label for="id_new_password1" class="required">New password:</label></td>
+                        <td>{{ form.new_password1 }}</td>
+                    </tr>
+                    <tr><td colspan="2">{{ form.new_password2.errors }}</td></tr>
+                    <tr>
+                        <td><label for="id_new_password2" class="required">Password (again):</label></td>
+                        <td>{{ form.new_password2 }}</td>
+                    </tr>
+                </table>
+                <div class='placeholder'>   
+                    <input id='done' class="btn success medium" type="submit" name="submit" value='Submit' />
+                </div>       
+            </form>
+        {% else %}
+            <h1 class="page-title text-center">Password reset unsuccessful</h1>
+            <p>The password reset link was invalid, possibly because it has already been used.  Please request a new password reset.</p>
+        {% endif %}
+{% endblock %}

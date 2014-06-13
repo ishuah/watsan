@@ -1,0 +1,134 @@
+#settings-box {
+	max-width: 1000px;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+#settings-box #section-content {
+	background-color: white;
+	color: #959595;
+	
+	padding: 10px 40px 30px 40px;
+	border-radius: 20px;
+	overflow: auto;
+	
+	-webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+}
+#settings-box #section-content th {
+	text-align: left;
+}
+#settings-box table {
+	border-collapse: collapse;
+	width: 100%;
+	color: #959595;
+}
+#settings-box form {
+	width: 100%;
+	margin: 20px 0 0 0;
+}
+#settings-box #member-form {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #959595;
+	border-top: 1px solid #959595;
+}
+#settings-box form tr {
+	height: 2em;
+	width: 100%;
+	font-size: 110%;
+	color: #959595;
+}
+#settings-box form th {
+	padding: 0 20px;
+	float: right;
+	font-weight: bold;
+}
+#settings-box form td {
+	width: 50%;
+}
+#settings-box form td input[type=text], #settings-box form td input[type=password] {
+	float: left;
+	min-width: 350px;
+	border-radius: 5px;
+	text-align: left;
+	
+	font-family: AvantGarde-Demi, Verdana, Helvetica, sans-serif;
+	font-size: 110%;
+	color: #626262;
+	-webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	padding: 0 5px;
+}
+
+#settings-box #member-list tr {
+	border-bottom: 1px solid #959595;
+}
+#settings-box #member-list td, #settings-box #member-list th {
+	min-width: 100px;
+	text-align: center;
+	padding: 5px;
+}
+#cancel-new-member {
+	display: block;
+	margin: 5px 0 10px 0;
+}
+a.link {
+	margin: 20px 0 0 0;
+	color: #333;
+	text-decoration: underline;
+}
+a.link:hover {
+	color: #626262;
+}
+
+#settings-box #btns {
+	width: 30%;
+	height: 2em;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: 0;
+}
+#settings-box input[type='submit'], #settings-box select, #delete-selected {
+	width: 30%;
+	font-size: 110%;
+	font-weight: bold;
+	border-radius: 5px;
+	text-align: center;
+	padding: 5px;
+	margin: 5px auto;
+	cursor: pointer;
+	
+	color: white;
+	background-color: #959595;
+	-webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+}
+#settings-box #add-new-member {
+	color: #333;
+}
+#settings-box #add-new-member:hover {
+	color: #626262;
+}
+#settings-box #submit {
+	width: 100%;
+	margin: 0 auto;
+	background-color: #959595;
+}
+#settings-box #submit:hover, #delete-selected:hover {
+	border: 1px solid #626262;
+	color: #white;
+	background-color: #626262;
+}
+#delete-selected {
+	display: block;
+	border: 1px solid #626262;
+	margin-bottom: 10px;
+	margin-top: 0;
+	font-size: 1em;
+	font-weight: regular;
+	margin: 0;
+}

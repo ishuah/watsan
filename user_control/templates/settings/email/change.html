@@ -1,0 +1,17 @@
+{% extends "base_map/base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="column_6 offset_3 padding margin-top">
+        <h3 class="text center">Change your Email</h3>
+        <p class="text center margin-bottom warning">
+            Enter your new email address.
+        </p>
+        <form class="text-center" action="" method="post">
+        	{% csrf_token %}
+        	{{ new_email_form }}
+        	<input type="submit" value="Save" class="button margin-top">
+        </form>
+    </div>
+</div>
+{% endblock %}

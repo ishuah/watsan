@@ -1,0 +1,193 @@
+#bottom-pane {
+	position: absolute;
+	bottom: 25px;
+	left: 375px;
+	right: 0;
+	height: 243px;
+	z-index: 10;
+	border: 1px solid #333;
+	background-color: rgba(98, 98, 98, 0.1);
+	box-shadow: 0 2px 6px rgba(0,0,0,0.3), 0 -3px 8px rgba(0,0,0,0.2);
+	border-radius: 2px;
+	pointer-events: all;
+}
+#bottom-pane.short {
+	height:100px;
+}
+#bottom-pane.collapsed {
+	height:15px;
+}
+#bottom-pane .hide-btn {
+	height: 15px;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+#bottom-pane .hide-btn .arrow {
+	border-bottom: 0;
+	border-top: 10px solid #999;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	left: 50%;
+	top: 2px;
+}
+#bottom-pane .hide-btn:hover .arrow {
+	border-top: 10px solid rgba(98, 98, 98, 1);
+}
+#bottom-pane .hide-btn.open .arrow {
+	border-top: 0;
+	border-bottom: 10px solid #999;
+}
+#bottom-pane .hide-btn.open:hover .arrow {
+ 	border-top: 0;
+	border-bottom: 10px solid rgba(98, 98, 98, 1);
+}
+
+#bottom-pane .tab-list {
+	margin: 0;
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 200px;
+	padding: 0;
+	z-index: 50;
+}
+#bottom-pane .tab {
+	display: inline-block;
+	width: 180px;
+	padding: 10px;
+	margin: 0;
+	color: #626262;
+	background-color: #999;
+	/*box-shadow: 0 2px 6px rgba(0,0,0,0.3), 0 -3px 8px rgba(0,0,0,0.2);*/
+	font-size: 1.1em;
+	text-align: left;
+	border-radius: 2px;
+	cursor: pointer;
+	font-family: Varela;
+	z-index: 30;
+}
+#bottom-pane .tab.selected, #bottom-pane .tab:hover {
+	background-color: rgba(255, 255, 255, 0.8);
+	/*box-shadow: 0 2px 6px rgba(0,0,0,0.3), 0 -3px 8px rgba(0,0,0,0.2);*/
+}
+#bottom-pane .tab span {
+	float: right;
+	width: 25px;
+}
+
+#bottom-pane .tab-content {
+	position: absolute;
+	left: 200px;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	border-radius: 2px;
+	padding: 0;
+}
+#bottom-pane .bar-graph, #bottom-pane .slider-graph {
+	height: 100%;
+}
+#bottom-pane .slider {
+	left: -9px;
+	bottom: 0;
+	height: 100%;
+}
+#bottom-pane.short .slider {
+	height: 2.5em;
+}
+#bottom-pane .graph {
+	position: absolute;
+	right: 0;
+	left: 2px;
+	height: 100%;
+	top: 0;
+	pointer-events: none;
+	z-index: 50;
+}
+#bottom-pane .graph svg {
+	width: 100%;
+	height: 100%;
+}
+#bottom-pane .extra-option {
+	position: absolute;
+	left: 10px;
+	height: 40px;
+	width: 40px;
+	background-color: #e3e4d8;
+	color: rgba(98, 98, 98, 0.8);
+	border-radius: 2px;
+	border: 1px solid rgba(98, 98, 98, 0.35);
+	font-size: 2em;
+	text-align: center;
+	cursor: pointer;
+	line-height: 40px;
+}
+#bottom-pane .extra-option:hover, #bottom-pane .extra-option.active {
+	background-color: rgba(98, 98, 98, 0.8);
+	color: #e3e4d8;
+}
+
+#bottom-pane .graph path, #bottom-pane .graph line {
+	fill: #626262;
+	stroke: #626262;
+	shape-rendering: crispEdges;
+	stroke-width: 2px;
+}
+#bottom-pane .graph text {
+	padding: 5px;
+}
+#bottom-pane.short .graph text {
+	cursor: pointer;
+	font-weight: bold;
+}
+
+#bottom-pane .static.white {
+	fill: #e3e4d8;
+	stroke: #999;
+	stroke-width: 0.5px;
+}
+#bottom-pane .dynamic {
+	pointer-events: none;
+}
+#bottom-pane .hovering {
+	fill: #e3e4d8;
+	stroke: #333;
+	stroke-width: 5px;
+}
+
+#bottom-pane .ui-slider .ui-slider-handle {
+	position: absolute;
+	z-index: 100;
+	width: 1em;
+	background-image: url(/static/images/worn_dots.png);
+  	background-repeat: repeat;
+  	box-shadow: 0 2px 6px rgba(0,0,0,0.3), 0 -3px 8px rgba(0,0,0,0.2);
+	border: 1px solid #333;
+	height: 50px;
+	border-radius: 50px;
+	margin: 0;
+	margin-top: 95px;
+	cursor: move;
+	background-color:#999;
+}
+#bottom-pane .ui-slider .ui-slider-handle:last-child {
+	margin-left: 2px;
+}
+#bottom-pane .ui-slider .ui-slider-range {
+	position: absolute;
+	background-color: rgba(255, 255, 255, 0.8);
+	box-shadow: 0 2px 6px rgba(0,0,0,0.3), 0 -3px 8px rgba(0,0,0,0.2);
+	height: 243px;
+	top: 0;
+	margin-left: 8px;
+	border-right: 2px solid #626262;
+	border-left: 2px solid #626262;
+	display: block;
+	background-position: 0 0;
+	/*background-color: rgba(227, 228, 216, 0.5);*/
+	z-index: 0;
+	cursor: pointer;
+}

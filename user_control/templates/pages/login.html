@@ -1,0 +1,29 @@
+{% extends "base_map/base.html" %}
+
+{% block header_content %}
+{% endblock %}
+
+{% block content %}
+	<div id='small-box' class="text-center">
+		<h1 class="page-title">Log in</h1>
+			<form method="post" action="{% url 'default_login' %}">
+				{% csrf_token %}
+				<input type="hidden" name="next" value="{{ next }}" />
+				{% if form.errors %}
+				<ul class="errorlist">
+					<li>The username or password entered do not match an existing account.</li>
+				</ul>
+				{% endif %}
+				<div>
+					<input required type='text' id="username" onfocus='removeDefault(this.id)' onblur="restoreDefault(this.id)" class='wide' name='username' placeholder='Username' />
+					<input required type='password' id="password" onfocus='removeDefault(this.id)' onblur="restoreDefault(this.id)" class='wide' name='password' placeholder='Password' />
+					<a id='forgot' href="{% url 'password_reset' %}">Forgot your password?</a>
+				</div>
+				<div class='placeholder'>
+					<div id='goto'><p>Don't have an account? <a href="{% url 'signup' %}">Sign Up</a></p></div>
+					<button id="done" class="btn success medium" type="submit" name="submit" >Log in</button>
+				</div>
+			</form>
+			
+	</div>
+{% endblock %}

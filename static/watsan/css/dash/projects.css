@@ -1,0 +1,124 @@
+#page-title {
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+	color: rgba(88, 88, 90, 0.9);
+	margin-top: 10px;
+}
+
+#new-project {
+	display: block;
+	height: 60px;
+	line-height: 60px;
+}
+#project-list {
+	list-style: none;
+	margin: 0 20px 20px 0;
+}
+#project-list li {
+	font-size: 20px;
+	color: #58585A;
+}
+.project {
+	border-bottom: 1px solid #999;
+}
+#project-list li:first-child {
+	border-top: 1px solid #999;
+}
+#project-list li:hover {
+	background-color: #f5f5f5;
+}
+#project-list li a {
+	padding: 10px;
+	color: #58585A;
+	display: block;
+}
+#project-list li:hover a {
+	text-decoration: underline;
+	color: #ffc000;
+}
+#project-list li:hover .typicn {
+	color: #ffc000;
+}
+
+#projects h2 {
+	margin-bottom: 10px;
+	color: #999;
+}
+#projects {
+	margin: 20px 0;
+	padding-bottom: 20px;
+}
+#projects .button .typicn {
+	margin: 0 20px;
+}
+#projects .button .typcn-world {
+	margin: 0 20px 0 0;
+}
+.steps {
+	border-spacing: 0 20px;
+	list-style: none;
+	margin: 20px 0;
+}
+.steps .typicn {
+	font-size: 1.5em;
+}
+.incomplete, .incomplete #site-table, .incomplete .buttons, .incomplete p {
+	display: none;
+}
+.step {
+	margin: 20px 0;
+	min-height: 4em;
+}
+.project .step.incomplete {
+	display: block;
+	opacity: 0.7;
+}
+
+#site-table {
+	width: 100%;
+	color: black;
+}
+#site-table table {
+	border-radius: 2px;
+	border: 1px solid #c3c3c3;
+	box-shadow: inset 0 .1em 0 rgba(255,255,255,0.1), inset 0 -.15em 0 rgba(0,0,0,0.2), 0 .15em 0 rgba(0,0,0,0.075)
+}
+#site-table th, #site-table td {
+	background-color: #f5f5f5;
+}
+#site-table td .typcn-delete {
+	color: #C21D1D;
+}
+#site-table td .typcn-delete:hover {
+	color: #333;
+}
+
+#projects .button {
+	min-width: 200px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.step._3 .button {
+	display: inline-block;
+}
+.buttons {
+	height: 75px;
+}
+
+ul.bulleted {
+	list-style: disc;
+}
+ol.deci {
+	list-style: decimal;
+}
+.inset {
+	margin: 0 50px;
+}
+.inset li {
+	font-size: 1.3em;
+	padding: 5px 0 !important;
+}
+.px_margin {
+	margin: 20px;
+}

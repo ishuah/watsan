@@ -1,0 +1,15 @@
+{% extends "base_map/base.html" %}
+
+{% block content %}
+	<div id="small-box">
+		<h1 class="page-title text-center">Password Reset Successful</h1>
+		<p>We've e-mailed you instructions for resetting your password. You should be receiving it shortly.</p>
+		<p><b>Please Note:</b> If you don't see the email in your inbox check your spam/junk folder</p>
+		<div class='placeholder'>
+			<div id='goto'>
+				<a href="{% url 'default_login' %}">Log In</a>
+				<a href="{% url 'signup' %}">Sign Up</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "watsan/dashboard/base.html" %}
+{% load thumbnail %}
+
+{% block title %}Connect to Nairobi Water{% endblock %}
+
+{% block content %}
+	<div class='row'>
+		<section class="column_10 offset_1 padding-bottom">
+			<div id='projects' class='steps'>
+				<div class='step'>
+					<div class='left'>
+						<h3>NCWSC Office: Southern Region</h3>
+						<p>Joseph Kangethe Social Hall in Woodley/Adams Arcade</p>
+					</div>
+					<a class='button right' href='http://www.nairobiwater.co.ke/contact_us/?ContentID=2' target='_blank'>NCWSC Website</a>
+				</div>
+				<div class='step'>
+					<h4>What you need for your application:</h4>
+					<ul class='bulleted steps inset'>
+						<li>Copy of ID</li>
+						<li>Copy of PIN Certificate</li>
+						<li>Passport Photo</li>
+						<li>Proof of Land Ownership. e.g. Title Deed, LR No. of plot, Letter from Chief</li>
+						<li>Map/Sketch of your project site with nearby landmarks</li>
+					</ul>
+				</div>
+				<div class='step'>
+					<h4>Steps to Connect</h4>
+					<ol class='deci inset'>
+						<li>Go to NCWSC Office to fill out application</li>
+						<li>Submit application and pay processing fee</li>
+						<li>NCWSC sends team to verify location and connectability</li>
+						<li>Customer Care creates account and Applicant installs new pipes with advice from NCWSC</li>
+					</ol>
+				</div>
+				<div class='buttons'>
+					<a class='button left' href='/watsan/project/{{project.id}}'><span class='typicn typcn-arrow-left-thick'></span>Back to Project</a>
+					<a class='button right' href="/watsan/alts/{{project.id}}">Find an Alternative</a>
+				</div>
+			</div>
+		</section>
+	</div>
+{% endblock %}

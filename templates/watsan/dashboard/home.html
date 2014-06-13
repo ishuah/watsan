@@ -1,0 +1,27 @@
+{% extends "watsan/dashboard/base.html" %}
+{% load thumbnail %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+	<div class='row'>
+		<section class="column_12 padding-bottom">
+			<div class='padding-bottom'>
+				<h4 class="">
+					Welcome to WATSAN Portal: Kibera! Start by clicking New Project below, then follow the steps to find out the likely cost of a new city-connected water or toilet facility at your location and to find out how to apply for the connection with Nairobi Water.
+				</h4>
+			</div>
+			<div id="projects" class='text'>
+				{% if projects %}
+					<h2>Your Projects:</h2>
+					<ul id='project-list'>
+					{% for project in projects %}
+				    	<li class='project'><a href="/watsan/project/{{project.id}}"><span class='typicn typcn-folder'></span>{{project.name}}</a></li>
+				    {% endfor %}
+				    </ul>
+				{% endif %}
+				<a id='new-project' href='#' class='button column_6 offset_3'><h3><span class='typicn typcn-plus'></span> New Project</h3></a>
+			</div>
+		</section>
+	</div>
+{% endblock %}

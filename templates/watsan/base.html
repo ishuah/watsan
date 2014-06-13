@@ -1,0 +1,44 @@
+{% load staticfiles %}
+
+<html>
+<head>
+	<title>WATSAN Portal: Kibera</title>
+	<link rel="icon" type="image/png" href="{% static "watsan/img/WATSAN_logo.png" %}">
+	<script type="text/javascript" src="/static/javascript/tools/jquery.js" /></script>
+	<script type='text/javascript' src='/static/steal/steal.js?/static/watsan/javascript/loaders/dash.js'></script>
+	{% block htmlheader %}{% endblock %}
+	<script type="text/javascript">
+		window.WATSAN = {};
+	</script>
+	{% include "watsan/tracking.html" %}
+</head>
+<body>
+	<div id="container">
+		{% block header %}
+			{% include "watsan/empty_header.html" %}
+		{% endblock %}
+		<div id="holder">
+			<a id='feedback-btn' class="text underline on-right" target="_newtab" href="mailto:feedback@spatialcollective.com">Feedback</a>
+			<div id='page-title'><h2>{% block title %}{% endblock %}</h2></div>
+			<div class="content">
+				<section class="row">
+					<div class="column_12">
+						{% block content %}{% endblock %}
+					</div>
+				</section>
+			</div>
+			<div>
+				<p class="text normal center padding">This website is currently being tested and we encourage you to <a class="text underline" href="mailto:feedback@spatialcollective.com" target="blank">email us</a> with feedback and suggestions to improve it.</p>
+			</div>
+		</div>
+		<footer class='bck light padding'>
+			<div id='logos' class='row'>
+				<span class='column_4'><a href='http://nairobiwater.co.ke/'><img src='/static/watsan/img/ncwscLogo.png' id='ncwsc-logo' class='logo'></img></a></span>
+				<span class='column_3 offset_1'><a href='http://kounkuey.org/'><img src='/static/watsan/img/kdiLogo.png' id='kdi-logo' class='logo'></img></a></span>
+				<span class='column_2 offset_2'><a href='http://spatialcollective.com/'><img src='/static/watsan/img/scLogo.png' id='sc-logo' class='logo'></img></a></span>
+			</div>
+			<p class='row'>WATSAN Portal: Kibera is a project of Kounkuey Design Initiative in partnership with Spatial Collective and Nairobi City Water and Sewerage Company. <a href='{% url 'watsan.views.about' %}'>More Info</a></p>
+		</footer>
+	</div>
+</body>
+</html>

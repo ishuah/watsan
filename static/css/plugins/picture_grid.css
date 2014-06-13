@@ -1,0 +1,73 @@
+#picture-view { display:none; }
+
+#picture-grid-view {
+	display: none;
+	position: absolute;
+	bottom: 4px;
+	top: 0;
+	max-width: 100%;
+	overflow: auto;
+	margin: 0 auto;
+	z-index: 90;
+	pointer-events: all;
+	padding-top: 54px;
+}
+
+#picture-grid-view .grid-element {
+	cursor: pointer;
+	position: relative;
+	float: left;
+	height: 200px;
+	width: 300px;
+	margin: 4px;
+	transition: all 1s;
+	-moz-transition: all 1s;
+	-webkit-transition: all 1s;
+	-o-transition: all 1s;
+	border-radius: 5px;
+	-webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+}
+
+#picture-grid-view .grid-element img {
+	height: 200px;
+	width: 300px;
+	position: absolute;
+	bottom: 0;
+}
+
+#picture-grid-view .grid-element h5 {
+	font-size: 120%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	color: white;
+	margin: 0;
+	padding: 20px 10px;
+	text-align: center;
+	background-color: rgba(51, 51, 51, 0.7);
+}
+
+
+#picture-grid-view .grid-element:hover, #picture-grid-view div.hovering{ background-color: #626262; }
+
+#picture-grid-view .pink { background-color: hotpink; color: #626262; }
+#picture-grid-view .red { background-color: #ff826c; color: #626262; }
+#picture-grid-view .blue {	background-color: lightskyblue; color: #626262; }
+#picture-grid-view .purple { background-color: orchid; color: #626262; }
+#picture-grid-view .green { background-color: #A5C094; color: #626262; }
+#picture-grid-view .yellow { background-color: gold; color: #626262; }
+#picture-grid-view .brown { background-color: #D6B678; color: #626262; }
+#picture-grid-view .white {	background-color: white; color: #626262; }
+#picture-grid-view .grey {	background-color: #999; color: #626262; }
+#picture-grid-view .pink:hover, #picture-grid-view .pink.hovering { color: hotpink; background-color: #626262; }
+#picture-grid-view .red:hover, #picture-grid-view .red.hovering { color: #ff826c; background-color: #626262; }
+#picture-grid-view .blue:hover, #picture-grid-view .blue.hovering {	color: lightskyblue; background-color: #626262; }
+#picture-grid-view .purple:hover, #picture-grid-view .purple.hovering { color: orchid; background-color: #626262; }
+#picture-grid-view .green:hover, #picture-grid-view .green.hovering { color: #A5C094; background-color: #626262; }
+#picture-grid-view .yellow:hover, #picture-grid-view .yellow.hovering { color: gold; background-color: #626262; }
+#picture-grid-view .brown:hover, #picture-grid-view .brown.hovering { color: #D6B678; background-color: #626262; }
+#picture-grid-view .grey:hover, #picture-grid-view .grey.hovering {	color: #999; background-color: #626262; }
+#picture-grid-view .white:hover, #picture-grid-view .white.hovering { color: white; background-color: #626262; }

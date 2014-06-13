@@ -1,0 +1,16 @@
+#newsite-form li {
+	font-weight: bold;
+	padding: 15px;
+	border-radius: 5px;
+	color: rgba(98, 98, 98, 0.8);
+}
+#newsite-form li:hover, #newsite-form li.selected {
+	color: #e3e4d8;
+	background-color: rgba(98, 98, 98, 0.8);
+}
+#newsite-form li input {
+	float: right;
+	border-radius: 5px;
+	height: 25px;
+	padding: 2px 5px;
+}

@@ -1,0 +1,306 @@
+#header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right:0;
+	height: 35px;
+	z-index: 1000;
+	background-color: rgba(98, 98, 98, 1);
+	color: rgba(227, 228, 216, 1);
+	margin: 0;
+}
+
+#logo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50px;
+	margin: 0 25px;
+	z-index: 100;
+}
+#poweredBy-logo {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 250px;
+	padding: 5px 15px;
+	z-index: 1000;
+}
+#logo img, #poweredBy-logo img {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+#poweredBy-logo img {
+	border-radius: 5px 5px 0 0;
+}
+
+#page-title {
+	display: inline;
+	margin-left: 80px;
+	padding: 0 20px;
+	font-size: 150%;
+	text-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	line-height: 35px;
+}
+
+.left-btns {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-right: 25px;
+	height: 100%;
+	font-size: 200%;
+	line-height: 30px;
+}
+.left-btns a {
+	display: inline-block;
+	color: rgba(227, 228, 216, 1);
+}
+#settings-btn:before {
+	display: inline-block;
+	width: auto;
+	height: auto;
+
+	transition: all 500ms;
+	-moz-transition: all 500ms;
+	-webkit-transition: all 500ms;
+	-o-transition: all 500ms;
+}
+#setting-menu {
+	height: 35px;
+}
+#setting-menu:hover #settings-btn {}
+#setting-menu:hover #settings-btn:before, #setting-menu:active #settings-btn:before {
+	transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
+	-webkit-transform: rotate(270deg);
+}
+#setting-menu .hidden {
+	display: inline-block;
+	font-size: 14px;
+
+	transition: all 500ms;
+	-moz-transition: all 500ms;
+	-webkit-transition: all 500ms;
+	-o-transition: all 500ms;
+
+	transform: translateX(90px) scaleX(0);
+	-ms-transform: translateX(90px) scaleX(0);
+	-webkit-transform: translateX(83px) scaleX(0);
+}
+#setting-menu:hover .hidden, #setting-menu:active .hidden {
+	transform: translateX(0) scaleX(1);
+	-ms-transform: translateX(0) scaleX(1);
+	-webkit-transform: translateX(0) scaleX(1);
+}
+#setting-menu .hidden a {
+	padding: 5px 10px;
+	text-decoration: underline;
+}
+
+#meta-links {
+	position: absolute;
+	top: 5px;
+	right: 30px;
+	float: right;
+}
+#meta-links a {
+	float: right;
+	font-size: 80%;
+	padding: 2px 5px;
+	margin: 2px 0;
+	color: #959595;
+	border-radius: 5px;
+}
+#meta-links a:hover {
+	background-color: #959595;
+	color: white;
+}
+
+#area-header {
+	position: absolute;
+	top: 35px;
+	width: 100%;
+	text-align: center;
+	height: 31px;
+	pointer-events: all;
+}
+#area-header h3 {
+	background-color: #999;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.3), 0 -3px 8px rgba(0,0,0,0.2);
+	border: 0 1px 1px 1px solid #333;
+	padding: 3px;
+	color: white;
+	border-radius: 0 0 2px 2px;
+	max-width: 400px;
+	margin: 0 auto;
+}
+#area-header .close {
+	float: right;
+	cursor: pointer;
+	padding: 0 5px;
+}
+
+#action-bar {
+	position: absolute;
+	top: 35px;
+	left: 0;
+	right: 0;
+	height: 35px;
+	padding: 0 0 0 80px;
+	z-index: 100;
+	pointer-events: visible;
+	
+	background-color: rgba(255, 255, 255, 0.5);
+	color: #999;
+	-webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.3), 0 -3px 8px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 2px 6px rgba(0,0,0,0.3), 0 -3px 8px rgba(0,0,0,0.2);
+	box-shadow: 0 2px 6px rgba(0,0,0,0.3), 0 -3px 8px rgba(0,0,0,0.2);
+}
+#action-bar.fixed {
+	position: fixed;
+}
+
+#action-bar #aggregate-info, #action-bar #filter-info {
+	margin: 0;
+	line-height: 35px;
+}
+#action-bar #aggregate-info #visible-site-count {
+	font-weight: bolder;
+}
+#action-bar #filter-info {
+	float: left;
+	font-size: 130%;
+	font-weight: bold;
+}
+#action-bar #aggregate-info {
+	color: #959595;
+	float: right;
+	padding-right: 25px;
+	font-family: Numans, sans-serif;
+}
+#action-bar .action-btns.left {
+	float: left;
+	padding-right: 20px;
+}
+#action-bar .action-btns.right {
+	float: right;
+	padding-right: 30px;
+}
+#action-bar .action-btns a, #action-bar .action-btns a {
+	border-radius: 2px;
+	padding: 0 8px;
+	margin: 10px 5px;
+	cursor: pointer;
+	border: 1px solid rgba(98, 98, 98, 0.35);
+	background-color: rgba(227, 228, 216, 1);
+	color: rgba(98, 98, 98, 0.8);
+	line-height: 50px;
+
+	-webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+}
+#action-bar .action-btns a:hover, #action-bar .action-btns a.active {
+	color: rgba(227, 228, 216, 1);
+	background-color: rgba(98, 98, 98, 0.8);
+	border: 1px solid #959595;
+	-webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+}
+#action-bar .action-btns a:active {
+	background-color: white;
+	color: rgba(98, 98, 98, 0.8);
+	border: 1px solid #959595;
+}
+#action-bar .action-btns .typicn {
+	font-size: 160%;
+}
+#action-bar .action-btns .text {
+	position: relative;
+	top: -4px;
+	padding: 6px 8px;
+	margin-right: 0;
+	margin-left: 0;
+}
+#action-bar .action-btns #table_toggle {
+	margin: 0 5px;
+}
+
+#action-bar .action-btns button:hover, #action-bar .action-btns button.active {
+	color: rgba(227, 228, 216, 1);
+	background-color: rgba(98, 98, 98, 0.8);
+	border: 1px solid #959595;
+	-webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+}
+#action-bar .action-btns button:active {
+	background-color: white;
+	color: rgba(98, 98, 98, 0.8);
+	border: 1px solid #959595;
+}
+
+#action-bar .action-btns input {
+	border-radius: 2px;
+	font-family: Numans, sans-serif;
+}
+
+#search-div {
+	display: inline;
+	line-height: 50px;
+}
+#search-box {
+	display: none;
+	font-family: Numans, sans-serif;
+	font-size: 120%;
+	padding: 0 0 0 5px;
+	height: 30px;
+	position: relative;
+	top: -1px;
+	margin-left: 5px;
+}
+#search-box:hover {
+	color: #626262;
+}
+#clear-search {
+	display: none;
+	position: absolute;
+	right: 10px;
+	top: -12px;
+	cursor: pointer;
+}
+
+#settings-menu {
+	position:absolute;
+	top: 50px;
+	z-index: 99;
+	pointer-events: all;
+	text-align: center;
+}
+#settings-menu .arrow {
+	width: 0;
+	height: 0;
+	border-bottom: 12px solid rgba(255, 255, 255, 0.7);
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	margin: 0 auto;
+}
+#settings-menu ul {
+	background-color: rgba(255, 255, 255, 0.7);
+	border-color: rgba(255, 255, 255, 0.7);
+	border-width: 1px;
+	border-radius: 2px;
+}
+#settings-menu a {
+	padding: 5px 10px;
+	display: block;
+	color: #626262;
+	border-radius: 2px;
+}
+#settings-menu li:hover a {
+	color: rgba(98, 98, 98, 1);
+	background-color: rgba(227, 228, 216, 1);
+}

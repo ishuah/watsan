@@ -1,0 +1,31 @@
+.site-detail-card {
+	position: absolute;
+	left: 25px;
+	top: 100px;
+	padding: 10px;
+	width: 226px;
+	/*text-align: center;*/
+}
+
+.site-detail-card .header {
+	text-align: left;
+}
+.site-detail-card .header .typicn, .site-detail-card .scalar {
+	float: right;
+}
+
+.site-detail-card .group {
+	margin: 5px 0;
+	padding: 5px;
+	font-weight: bold; 
+}
+
+.site-detail-card table {
+	border-collapse:collapse;
+}
+.site-detail-card td {
+	padding: 5px 10px;
+}
+.site-detail-card table, .site-detail-card tr {
+	border: 5px solid white;
+}

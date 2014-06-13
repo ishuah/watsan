@@ -1,0 +1,30 @@
+{% extends "watsan/landing.html" %}
+
+{% block header %}
+	<header>
+		<nav id='sysnav'>
+			<span>Not registered?
+			<a class='button' href="{% url 'watsan.views.register_org' %}">Sign Up</a></span>
+			<br>
+		</nav>
+	</header>
+{% endblock %}
+
+{% block content %}
+	<div id="login-box">
+		{% if form.errors %}
+			<div id="login-errors">
+				<p>Your email and password did not match</p>
+				<p>Please try again</p>
+			</div>
+		{% endif %}
+		<form id="login-form" class="margin" method="post" action="{% url 'watsan_login' %}">
+			{% csrf_token %}
+			<input type='text' id="username" placeholder='Email' class='input-box' name='username' onfocus='removeDefault(this.id)' onblur="restoreDefault(this.id)" />
+			<input type='password' id="password" placeholder='Password' class='input-box' name='password' onfocus='removeDefault(this.id)' onblur="restoreDefault(this.id)"/>
+			<input type='submit' class="button margin-top" id='submit' value="Login" />
+			<input type="hidden" name="next" value="/watsan/dashboard/" />
+		</form>
+		<a class="margin" href="/watsan/password_reset">Forgot password?</a>
+	</div>
+{% endblock %}

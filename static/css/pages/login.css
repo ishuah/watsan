@@ -1,0 +1,89 @@
+body {
+    background-image: url('/static/images/bg.jpg');
+}
+
+h1, h2, h3 { 
+	font-family: 'CubanoRegular';
+}
+
+#landing .btn {
+	width: 150px;
+}
+
+header {
+	width: 580px;
+}
+
+#login-errors {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1em;
+	text-align: center;
+	font-weight: bold;
+	font-size: 110%;
+}
+#login-errors p {
+	color: #ff826c;
+}
+
+#small-box td {
+	padding-top: 20px;
+}
+#small-box #forgot {
+	text-align: right;
+	display: block;
+	margin: 5px 50px 20px 0;
+}
+#small-box #goto {
+	position: absolute;
+	bottom: 25px;
+	left: 40px;
+	display: inline-block;
+}
+#small-box #goto a {
+	text-decoration: underline;
+	padding: 0 10px;
+}
+#small-box #goto p {
+	margin: 0;
+}
+
+.errorlist {
+	color: red;
+	font-size: 0.9em;
+}
+
+ul.errorlist + input {
+	border-color: red !important;
+}
+
+#social-sign-in p {
+	margin-top: 0;
+}
+.sign-in {
+	margin: 0 10px;
+	display: inline-block;
+}
+.sign-in a {
+	width: 60px;
+	height: 60px;
+	display: inline-block;
+	background-repeat: no-repeat;
+}
+#google-sign-in {
+	background-image: url('/static/images/social/Red-signin_Small_base_20dp.png');
+	background-size: 60px 60px;
+	background-position:center;
+}
+#facebook-sign-in {
+	background-image: url('/static/images/social/FB-f-Logo__blue_50.png');
+	background-size: 40px 40px;
+	background-position:center;
+}
+#twitter-sign-in {
+	background-image: url('/static/images/social/Twitter_logo_blue.png');
+	background-size: 40px 32.52px;
+	background-position:center;
+}
+

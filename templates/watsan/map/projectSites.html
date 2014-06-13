@@ -1,0 +1,21 @@
+<script type="text/javascript">
+function addProjectSites() {
+	WATSAN.projectId = {{ project.id }};
+	{% if project.sites.all %}
+		{% for site in project.sites.all %}
+			{% if site.shape %}
+				var water_dist = "{{site.get_closest_waterline_distance}}";
+				var sewer_dist = "{{site.get_closest_sewerline_distance}}";
+				var sewer = {"connect": sewer_dist, "distance": sewer_dist, "cost": "{{site.get_closest_sewerline_cost}}" };
+				var water = {"connect": water_dist, "distance": water_dist, "cost": "{{site.get_closest_waterline_cost}}" };
+
+				var site = WATSAN.Site.create((new L.LatLng({{ site.shape.y }}, {{ site.shape.x }})), '{{ site.get_closest_landmarks }}', '{{ site.is_within }}', sewer, water, "{{ site.name }}", {{ site.id }}, '{{ site.color }}');
+				WATSAN.sites.add(site);
+				new WATSAN.SiteCardView({ model: site });
+				site.view.setElement(WATSAN.ConfirmedSite(site.view.model.toJSON()));
+				site.view.changePopup();
+			{% endif %}
+		{% endfor %}
+	{% endif %}
+}
+</script>

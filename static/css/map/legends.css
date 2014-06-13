@@ -1,0 +1,73 @@
+.layer-control {
+	position: absolute;
+	bottom: 25px;
+	right: 25px;
+	width: 246px;
+	pointer-events: all;
+}
+#choropleth-layer-control {
+	right: 296px;
+}
+
+.layer-list {
+	display: block;
+	z-index: 0;
+	position:relative
+}
+
+.legend-card.active {
+	z-index: 10;
+	position:relative
+}
+.legend-card {
+	background-color: rgba(255, 255, 255, 1);
+	box-shadow: 0 2px 6px rgba(0,0,0,0.3), 0 -3px 8px rgba(0,0,0,0.2);
+	width: 206px;
+	min-height: 100px;
+	border-radius: 2px;
+	padding: 5px 20px;
+	cursor: pointer;
+}
+.layer-list .legend-card {
+	min-height: 20px;
+}
+.layer-legend.choropleth {
+	right: 286px;
+}
+.legend-li .legend-card {
+	background-color: rgba(255, 255, 255, 0.6);
+	height: 20px;
+}
+.legend-li .legend-card .content {
+	display: none;
+}
+
+.legend-card .scale {
+	display: inline-block;
+	width: 100%;
+}
+.legend-card .no-margin {
+	margin: 0;
+	text-align: center;
+	min-height: 20px;
+}
+
+.legend-card .color-pallet {
+	margin: 0px;
+	width: 200px;
+	height: 30px;
+}
+.legend-card.choropleth .color-pallet {
+	border: 3px solid #626262;
+	height: 20px;
+}
+
+.legend-card .max-value, .legend-card .min-value {
+	margin: 5px;
+}
+.legend-card .max-value {
+	float: right;
+}
+.legend-card .min-value {
+	float: left;
+}

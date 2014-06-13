@@ -1,0 +1,54 @@
+*~
+*.log
+*.pot
+*.pyc
+*.conf
+local_settings.py
+
+# Settings that can change based on server vs prod
+spatialcollective/settings.py
+spatialcollective/urls.py
+spatialcollective/development.py
+
+# Eclipse files
+.project
+.pydevproject
+
+# testing files
+*selenium.log
+*coverage.xml
+*testresults.xml
+
+# javascriptmvc framework files (because i need symlinks on my local)
+static/djcelery
+static/steal
+static/jquery
+static/funcunit
+static/js
+static/js.bat
+
+# uneccessary admin stuff that works on the server but not locally
+static/admin/*
+templates/admin/*
+sites
+
+# Unnecessary static files
+static/grappelli/*
+static/gis/*
+
+
+# Pictures
+static/images/Pictures/*
+
+#Media files
+media
+
+*.osm
+*.osm.db
+
+#Sublime Text project files
+*.sublime-*
+
+#celery logs
+celerybeat-schedule
+

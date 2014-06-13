@@ -1,0 +1,206 @@
+@font-face {
+	font-family: 'London';
+	src: url('/static/css/extras/fonts/Chalet-LondonNineteenSixty.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+#site-pane {
+	min-width: 350px;
+}
+
+#site-pane #tab-placeholder {
+	display: table;
+	margin: 0 auto 0 auto;
+	border-radius: 5px;
+}
+#site-pane .tab-list {
+	list-style: none;
+	pointer-events: visible;
+	max-width: 410px;
+	height: auto;
+}
+#site-pane .tab-list li {
+	font-size: 0.5em;
+	display: inline;
+	text-align: center;
+	padding: 5px;
+	cursor: pointer;
+	margin: 10 10 0 0;
+	border: 0px solid #989898; 
+	border-radius: 5px;
+	width:auto;
+	line-height: inherit;
+}
+#site-pane .tab-list li span.text {
+	font-family: "London", sans-serif;
+	padding-top: 0;
+	height: auto;
+}
+#site-pane .tab-list li:first-of-type {
+	border-radius: 5px;
+	border: 0px solid #989898;
+}
+#site-pane .tab-list li:last-of-type {
+	border-radius: 5px;
+	border: 0px solid #989898;
+}
+
+#site-pane .tab-content {
+	position: absolute;
+	top: auto;
+	left: 0;
+	right: 0;
+	overflow: auto;
+	pointer-events: visible;
+	display: block;
+}
+
+#site-pane #intro-video {
+	width: 287px;
+	margin: 0 auto;
+}
+
+.tab-content .header {
+	font-size: 13px;
+	text-align: center; 
+	padding: 5px;
+	border-radius: 20px;
+	background-color: white;
+	color: #e1543a;
+	margin: 10px 0;
+}
+.tab-content h2 {
+	font-family: "London", sans-serif;
+	padding-bottom: 5px;
+}
+.tab-content h2.grey {
+	color: #e3e4d8;
+}
+.tab-content.detail h2 {
+	font-family: "London", sans-serif;
+	padding-top: 5px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+.tab-content h3 {
+	border-radius: 5px;
+	position: absolute;
+	top: 0;
+	cursor: pointer;
+	margin: 0 6px;
+}
+.tab-content h3.center {
+	left: 0;
+	font-size: 2.5em;
+	padding: 10px;
+	margin-top: 5px;
+	line-height: 100%;
+}
+.tab-content h3.close {
+	right: 0;
+	margin-top: 10px;
+	padding: 10px;
+}
+.tab-content h3:hover {
+	color: #999;
+}
+
+.tab-content.detail ul.main {
+	padding-bottom: 5px;
+}
+.tab-content.detail, .tab-content.list-formating ul.main {
+	padding-bottom: 60px;
+	background-color: rgba(255, 255, 255, 0);
+	margin: 0 20px 20px 20px;
+	border-bottom: 0px solid #626262;
+}
+.tab-content.list-formating ul.main {
+	border-top: 0px solid #626262;
+}
+
+.tab-content li {
+	padding: 0 20px;
+	line-height: 1.5;
+	cursor: pointer;
+	margin: 5px 0;
+	border-radius: 5px;
+}
+
+.tab-content.detail .description .bloglink {
+	text-align: right;
+	color: #333;
+}
+.tab-content.detail .description, .tab-content.detail .related, .tab-content.detail .research-output{
+	border-radius: 20px;
+	background-color: rgba(255, 255, 255, 0.8);
+	color: #666666;
+	padding: 10px;
+}
+.tab-content.detail .related {
+	background-color: white;
+}
+.tab-content.detail .related p, .tab-content.detail .research-output p {
+	color: #e1543a;
+	padding: 0 0 5px 10px;
+	margin: 0;
+}
+
+.tab-content.detail .related li, .tab-content.detail .research-output li{
+	cursor: pointer;
+	color: #666666;
+	list-style: none;
+}
+
+.tab-content.detail .related li:hover{
+	color: rgb(225, 84, 58);
+}
+.tab-content.list-formating li, #site-pane .tab-content.pies li {
+	border-top: 0px solid #626262;
+}
+.tab-content.list-formating li.main a {
+	pointer-events: none;
+}
+
+#detailbox {
+	display: none;
+	width: 75%;
+	height: 75%;
+	margin: 10% auto;
+	overflow: auto;
+	z-index: 90;
+	pointer-events: all;
+	padding: 18px;
+	background-color: rgba(227, 228, 216, 0.8);
+	border-radius: 20px;
+}
+
+#detailbox h3.close {
+	float: right;
+	cursor: pointer;
+	font-size: 16px;
+	color: #e1543a;
+}
+
+#detailbox h3.close:hover {
+	color: #999;
+}
+
+.embedded-video {
+	margin: 0 auto;
+	width: 595px;
+}
+
+.bigpicturebox {
+	margin-top: 10px;
+}
+img.picturebox {
+	width: 280px;
+	height: 200px;
+	margin: 4px;
+}
+
+h1.main a {
+	cursor: pointer;
+	color: #666666;
+}

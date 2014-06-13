@@ -1,0 +1,84 @@
+#legend {
+	position: absolute;
+	left: 25px;
+	top: 75px;
+	border: 1px solid #333;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.3), 0 -3px 8px rgba(0,0,0,0.2);
+	border-radius: 2px;
+	pointer-events: all;
+	width: 30%;
+	max-width: 270px;
+}
+
+#legend h2 {
+	/*background-color: rgba(227, 228, 216, 0.5);*/
+	background-color: #999;
+	color: white;
+	border-radius: 2px 2px 0 0;
+	padding: 5px;
+	text-align: center;
+	font-size: 1em;
+}
+#legend .entry .header {
+	cursor:pointer;
+}
+#legend .entry .header h2 {
+	background-color: rgba(255, 255, 255, 0.7);
+	color: #626262;
+	font-size: 1.3em;
+	text-align: left;
+	padding-left: 35px;
+	border-radius: 0;
+}
+#legend .entry.active .header h2 {
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+#legend .max-min-btn {
+	float: left;
+	pointer-events: none;
+	margin:10px;
+	border-right: 0;
+	border-left: 10px solid #626262;
+	border-bottom: 8px solid transparent;
+	border-top: 8px solid transparent;
+}
+#legend .max-min-btn.open {
+	border-bottom: 0;
+	border-top: 10px solid #626262;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+}
+#legend .all-choice-btns a {
+	font-size: 90%;
+	padding: 5px;
+	text-decoration: underline;
+}
+#legend .set-colors {
+	position: relative;
+	top: -15px;
+	float: right;
+	font-size: 90%;
+	text-decoration: underline;
+	background-image: url('/static/images/colorize.png');
+	background-repeat: no-repeat;
+	background-size: 20px;
+	width: 20px;
+	height: 20px;
+}
+
+#legend .groups li {
+	padding: 5px 10px 5px 35px;
+	font-size: 1em;
+	cursor: pointer;
+	color: #333;
+}
+#legend .groups {
+    filter: url(filters.svg#grayscale);
+    filter: gray;
+    -webkit-filter: grayscale(0.85);
+}
+#legend .entry.active .groups {
+    filter: none;
+    -webkit-filter: grayscale(0);
+}

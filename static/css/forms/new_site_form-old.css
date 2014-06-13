@@ -1,0 +1,212 @@
+#new-site {
+	position: fixed;
+	left: 160px;
+	right: 160px;
+	top: 10px;
+	bottom: 20px;
+	border-radius: 20px;
+	overflow: auto;
+	z-index: 95;
+}
+
+#new-site .errorlist {
+	color: #ff826c;
+}
+#new-site .help-text {
+	text-align: center;
+}
+#new-site li.color {
+	border-radius: 20px;
+	padding: 5px 10px;
+}
+
+#new-site .tab-btn-list {
+	font-size: 110%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 310px;
+	height: 36px;
+	border-bottom: 1px solid white;
+}
+
+#new-site .tab-btn-list li {
+	display: inline-block;
+	float: left;
+	width: 93px;
+	padding: 5px;
+	text-align: center;
+	font-weight: bold;
+}
+#new-site .tab-btn-list li a {
+	font-weight: bold;
+}
+#new-site .formset-tabs .tab-btn-list li {
+	width: 2em;
+	text-align: center;
+}
+#new-site .formset-tabs #form-dropdown {
+	position: absolute;
+	left: 30px;
+	width: 200px;
+	font-weight: bold;
+	background-color: #D99175;
+	border-radius: 20px;
+	border: 1px solid white;
+}
+#new-site ul.tab-btn-list li:hover, #new-site input[type=submit]:hover {
+	background-color: rgba(255, 255, 255, 0.8);
+	color: #626262;
+}
+#new-site ul.tab-btn-list li.active:hover {
+	background-color: white;
+	color: #626262;
+}
+#new-site ul.tab-btn-list li.active, #new-site ul.tab-btn-list li:active, #new-site input[type=submit]:active {
+	background-color: white;
+	color: #626262;
+}
+#new-site .formset-tabs #form-dropdown:hover,  #new-site .formset-tabs #form-dropdown:active{
+	background-color: #626262;
+	color: white;
+}
+
+#new-site form { margin: 0; }
+#new-site form .full-pane-content, #new-site form .pane-content {
+	left: 30px;
+	position: absolute;
+	top: 141px;
+	right: 0;
+	bottom: 54px;
+	display: block;
+	overflow: auto;
+	font-size: .7em;
+}
+#new-site .full-pane-content > li, #new-site .pane-content > li > label {
+	display: inline-table;
+	margin: 10px;
+	width: 200px;
+}
+#new-site .full-pane-content > li > label, #new-site .pane-content > li > label {
+	padding-right: 5px;
+}
+
+#new-site fieldset {
+	float: left;
+	border: 2px groove white;
+	border-radius: 20px;
+	padding: 5px;
+	margin: 10px;
+	width: 300px;
+}
+#new-site fieldset li {
+	padding: 3px 5px;
+	font-weight: normal;
+	display: block;
+	min-width: 100px;
+}
+#new-site fieldset li.inline-entry {
+	display: inline;
+}
+#new-site fieldset li.bold > label {
+	font-weight: bold;
+	padding: 5px;
+}
+#new-site legend {
+	padding: 0 10px;
+	cursor: pointer;
+	font-weight: bold;
+	border-radius: 20px;
+	background-color: white;
+	color: rgba(100, 100, 100, 1);
+}
+
+#incident-fields fieldset .victim {
+	background-color: #97B7BF;
+}
+#incident-fields fieldset .perp {
+	background-color: #D57879;
+}
+#incident-fields li.Harm-Weapon li:nth-child(-n+9) {
+	background-color: #D57879;
+	padding: 5px 10px;
+}
+#incident-fields li.Harm-Weapon li:nth-child(1) {
+	border-radius: 20px 20px 0 0;
+}
+#incident-fields li.Harm-Weapon li:nth-child(9) {
+	border-radius: 0 0 20px 20px;
+}
+
+#new-site input, #new-site select, #new-site option{
+	border-radius: 20px;
+	text-align: center;
+	padding: 2px;
+	background-color: white;
+	border: none;
+}
+#new-site input[type=text] {
+	width: 150px;
+}
+#new-site textarea {
+	border-radius: 20px;
+	width: 280px;
+	padding: 10px;
+}
+
+#new-site table {
+	color: white;
+	font-size: .7em;
+}
+#new-site th {
+	padding: 0 5px;
+	font-weight: normal;
+}
+
+#new-site .form-section {
+	position: absolute;
+}
+
+#new-site #new-site-btns {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 54px;
+}
+#new-site #new-site-btns .placeholder {
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#new-site input[type=submit], #new-site #saving-note {
+	text-align: center;
+	font-size: 110%;
+	font-weight: bold;
+	font-family: Junction, "Helvetica Neue", Helvetica, sans-serif;
+	cursor: pointer;
+	background-color: white;
+	color: #626262;
+	border-radius: 5px;
+	display: inline-block;
+	padding: 5px;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	text-align: center;
+}
+#new-site #save {
+	float: right;
+}
+#new-site #save-add {
+	float: left;
+}
+ #new-site #saving-note {
+	background-color: #A5C094;
+	display: block;
+}
+
+#new-site .tiny-autofill {
+	font-size: .4em;
+	font-weight: normal;
+	text-decoration: underline;
+	display: inline;
+	float: right;
+}

@@ -1,0 +1,53 @@
+.wizard {
+	position: absolute;
+	width: 50%;
+	height: 30%;
+	top: 30%;
+	margin: 0 25%;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.8);
+	-webkit-box-shadow: -1px -1px 10px rgba(0, 0, 0, .115);
+	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	box-shadow: -1px -1px 10px rgba(0, 0, 0, .115);
+	pointer-events: all;
+}
+
+.wizard h3, .wizard p {
+	text-align: center;
+	margin: 20px;
+}
+
+.wizard .buttons {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.wizard .btn {
+	margin: 20px 40px;
+	padding: 10px;
+	border-radius: 5px;
+}
+.wizard .cancel {
+	float: left;
+	background-color: #999;
+	color: #333;
+}
+.wizard .cancel:hover {
+	background-color: rgba(98, 98, 98, 0.8);
+	color: #e3e4d8;
+}
+.wizard .import {
+	float: right;
+	background-color: rgba(98, 98, 98, 0.8);
+	color: #e3e4d8;
+}
+.wizard .import:hover {
+	background-color: #999;
+	color: #333;
+}
+.wizard #uploading-note {
+	text-align: center;
+	line-height: 25px;
+	border-radius: 0 0 5px 5px;
+}

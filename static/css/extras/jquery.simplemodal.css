@@ -1,0 +1,10 @@
+/*
+ * Picture Grid CSS, based on simple modal!
+ */
+
+/* Overlay */
+#simplemodal-overlay {background-color:#000;}
+
+/* Container */
+#simplemodal-container {  border: 3px solid #999; border-radius: 5px; }
+#simplemodal-container a.modalCloseImg {background:url(../../images/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}

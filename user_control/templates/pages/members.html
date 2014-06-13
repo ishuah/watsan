@@ -1,0 +1,78 @@
+{% extends "settings/settings.html" %}
+
+{% block form-tag %}
+	<a id="add-new-member" class="link" href="#" onclick="$('#member-form').slideDown(); $('#add-new-member').slideUp();">Add a new member</a>
+	<form id="member-form" method="post" action="/settings/members/" style="display: none">
+		<a id="cancel-new-member" class="link" href="#" onclick="$('#member-form').slideUp(); $('#add-new-member').slideDown();">Cancel</a>
+{% endblock %}
+
+{% block form-contents %}
+	<table>
+		{{ member_form.as_table }}
+	</table>
+{% endblock %}
+
+{% block extra-content %}
+	{% if member_list %}
+		<a id="delete-selected" style="display:none">Delete Selected</a>
+		<table id="member-list">
+			<tr>
+				<th></th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Username</th>
+				<th>Created</th>
+				<th>Last Login</th>
+			</tr>
+			{% for member in member_list %}
+				<tr>
+					<td><input type='checkbox' name="{{member.id}}" id="member-{{member.id}}" class="member-select"></input></td>
+					<td>{{member.get_full_name}}</td>
+					<td>{{member.email}}</td>
+					<td>{{member.username}}</td>
+					<td>{{member.date_joined}}</td>
+					<td>{{member.last_login}}</td>
+				</tr>
+			{% endfor %}
+		</table>
+	{% endif %}
+{% endblock %}
+
+{% block script %}
+	$(function() {
+		{% if member_form.errors %}
+			$("#member-form").slideDown();
+		{% endif %}
+
+		$(".member-select").click(function(e) {
+			if ($(".member-select:checked").length > 0) {
+				$("#delete-selected").fadeIn();
+				$(".member-select:checked").parents('tr').hide().attr('class', 'white background-grey').fadeIn();
+				$(".member-select:not(:checked)").parents('tr').attr('class', 'background-white grey').show();
+			} else {
+				$("#delete-selected").fadeOut();
+				$(".member-select:checked").parents('tr').hide().attr('class', 'white background-grey').fadeIn();
+				$(".member-select:not(:checked)").parents('tr').attr('class', 'background-white grey').show();
+			}
+		});
+
+		$("#delete-selected").click(function() {
+			var deadMembers = '';
+			$(".member-select:checked").each(function(i, e) {
+				deadMembers += e.id.replace(/member-/g, '') + ',';
+			});
+			$.post('/user/delete/' + deadMembers + '/', {'csrfmiddlewaretoken': '{{ csrf_token }}'})
+				.complete(function() { window.location.href = window.location.href; });
+		});
+
+		$("#id_is_admin").click(function() {
+			if ($("#id_is_admin:checked").length > 0) {
+				if ($("#id_can_export_data:not(:checked)").length > 0)
+					$("#id_can_export_data").click();
+				$("#id_can_export_data").attr('disabled', 'disabled');
+			} else if ($("#id_is_admin:not(:checked)").length > 0) {
+				$("#id_can_export_data").removeAttr('disabled');
+			}
+		});
+	});
+{% endblock %}

@@ -1,0 +1,93 @@
+header {
+	height: 70px;
+	display: block;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.3), 0 -3px 8px rgba(0,0,0,0.3);
+	-webkit-box-sizing: border-box;
+	line-height: 30px !important;
+	padding: 10px 2em;
+}
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 215px;
+}
+header, footer {
+	background-color: #f5f5f5;
+	color: #58585A;
+}
+footer p {
+	text-align: left;
+	background-color: #f5f5f5;
+	padding: 10px 10px 0 10px;
+}
+header h1 {
+	display: inline;
+	margin-right: 20px;
+}
+header img {
+	float: left;
+	height: 50px;
+}
+header #instructions {
+	margin-right: 75px;
+	text-align: center;
+}
+header #pagenav {
+	display: inline-block;
+	margin-top: 10px;
+}
+header #sysnav {
+	position: absolute;
+	margin-top: 10px;
+	top:10px;
+	right:2em;
+}
+header #sysnav a {
+	margin: 0 10px;
+}
+header #sysnav .button {
+	background-color: #58585a;
+	color: white;
+}
+header nav, header nav a {
+	color: #999;
+	font-weight: bold;
+}
+header nav a.active {
+	color: #58585A;
+}
+header nav a:hover {
+	text-decoration: underline;
+	color: #58585A;
+}
+header nav a:hover .typicn {
+	text-decoration: none;
+}
+header nav a.active:hover {
+	text-decoration: none;
+}
+header .typicn {
+	font-size: 1.5em;
+}
+header .typcn-business-card {
+	color: #58585A;
+	margin-right: 0;
+}
+
+#watsan-logo {
+	height: 50px;
+}
+#ncwsc-logo {
+	height: 126px;
+	width: 80px;
+}
+#kdi-logo {
+	margin: 20px 0;
+	height: 82px;
+	width: 154px;
+}
+#sc-logo {
+	height: 131px;
+	width: 143px;
+}

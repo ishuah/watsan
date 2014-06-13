@@ -1,0 +1,54 @@
+<script type="text/javascript">
+	function addBaseFeatures() {
+		var map = WATSAN.map.get('basemap');
+		{% if landmarks %}
+			{% for landmark in landmarks %}
+				{% if landmark.shape %}
+					var landmark = WATSAN.Landmark.create('{{landmark.name}}', '{{landmark.place_type}}', '{{landmark.shape.x}}', '{{landmark.shape.y}}');
+					{% if landmark.visible %}
+						landmark.set('visible', true);
+						landmark.get('marker').addTo(map);
+					{% else %}
+						landmark.set('visible', false);
+					{% endif %}
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+
+		// {% if roads %}
+		// 	var roadGroup = L.layerGroup();
+		// 	{% for road in roads %}
+		// 		{% if road.shape %}
+		// 			var pointArray = [];
+		// 			{% for c in road.shape.coords %}
+		// 				pointArray.push(new L.LatLng('{{c.1}}', '{{c.0}}'));
+		// 			{% endfor %}
+		// 			var roadLine = WATSAN.Road.createPolyLine(pointArray);
+		// 			roadGroup.addLayer(roadLine);
+		// 			WATSAN.Road.create('{{road.name}}', '{{road.road_type}}', roadLine);
+		// 		{% endif %}
+		// 	{% endfor %}
+		// 	roadGroup.addTo(map);
+		// 	WATSAN.overlay.set('roadsLayer', roadGroup);
+		// {% endif %}
+
+		{% if villages %}
+			var villagesGroup = L.layerGroup();
+			{% for village in villages %}
+				{% if village.shape %}
+					var pointArray = [];
+					{% for c in village.shape.coords %}
+						{% for c_o in c%}
+							pointArray.push(new L.LatLng('{{c_o.1}}', '{{c_o.0}}'));
+						{% endfor %}
+					{% endfor %}
+					var village = WATSAN.Village.create('{{village.name}}', pointArray, villagesGroup);
+					if ('{{village.name}}' != 'Kibera')
+						villagesGroup.addLayer(village);
+				{% endif %}
+			{% endfor%}
+			villagesGroup.addTo(map);
+			WATSAN.overlay.set('villagesLayer', villagesGroup);
+		{% endif %}
+	}
+</script>

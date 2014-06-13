@@ -1,0 +1,13 @@
+.table {
+	background: #fff;
+	color: #34495e;
+	border: .1em solid #c4d2df;
+}
+
+body table th {
+	background-color: #c4d2df;
+	color: #333;
+}
+form table th {
+	background-color: white;
+}

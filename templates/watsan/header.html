@@ -1,0 +1,31 @@
+{% extends "watsan/empty_header.html" %}
+
+	{% block pagenav %}
+		<a class="{% if request.path == '/watsan/dashboard/' %} active {% endif %}" href="{% url 'watsan.views.dashboard' %}"><span class='typicn typcn-home'></span>Home</a>
+
+		{% url 'watsan.views.project' project.id as project_url %}
+		{% url 'watsan.views.map' project.id as map_url %}
+		{% url 'watsan.views.alts' project.id as alts_url %}
+		{% url 'watsan.views.ncwsc' project.id as ncwsc_url %}
+
+		{% if project %}
+			<span class='typicn typcn-arrow-right-thick'></span>
+			<a class="{% if request.path == project_url %} active {% endif %}" href="/watsan/project/{{ project.id }}"><span class='typicn typcn-folder'></span>{{ project.name }}</a>
+		{% endif %}
+		{% if request.path == map_url %}
+			<span class='typicn typcn-arrow-right-thick'></span>
+			<a class='active' href="#"><span class='typicn typcn-world'></span>Map</a>
+		{% elif request.path == alts_url %}
+			<span class='typicn typcn-arrow-right-thick'></span>
+			<a class='active' href="#"></span>Alternative Options</a>
+		{% elif request.path == ncwsc_url %}
+			<span class='typicn typcn-arrow-right-thick'></span>
+			<a class='active' href="#"></span>Nairobi Water</a>
+		{% endif %}
+	{% endblock %}
+
+	{% block sysnav %}
+		<a class="text underline" href="{% url 'watsan_logout' %}">Logout</a>
+		<a class="text underline" href="{% url 'watsan.views.about' %}">About</a>
+		<a class="text underline" href="{% url 'watsan.views.settings' %}">Settings</a>
+	{% endblock %}

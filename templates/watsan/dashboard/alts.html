@@ -1,0 +1,23 @@
+{% extends "watsan/dashboard/base.html" %}
+{% load thumbnail %}
+
+{% block title %}Choose an Alternative Form of Sanitation{% endblock %}
+
+{% block content %}
+	<div class='row'>
+		<section class="column_10 offset_1 padding-bottom">
+			<div id='projects' class='steps'>
+				<h3 class='px_margin'>A few alternatives to consider:</h4>
+				<ul class='bulleted steps inset'>
+					<li>Biogas</li>
+					<li>Compost</li>
+					<li>Sanergy</li>
+				</ul>
+				<div class='buttons px_margin'>
+					<a class='button left' href='/watsan/project/{{project.id}}'><span class='typicn typcn-arrow-left-thick'></span>Back to Project</a>
+					<a class='button right' href="/watsan/ncwsc/{{project.id}}">Connect to Nairobi Water</a>
+				</div>
+			</h3>
+		</section>
+	</div>
+{% endblock %}

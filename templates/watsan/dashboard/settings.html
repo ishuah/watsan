@@ -1,0 +1,53 @@
+{% extends "watsan/dashboard/base.html" %}
+
+{% block content %}
+	<div class="row">
+		<div class=" column_6 padding margin-top">
+			<h2>Organization Details</h2>
+			<p class="margin-top">Name: {{meta.organization}}</p>
+			<p class="margin-top">Type: {{meta.organization.org_type}}</p>
+			<p class="margin-top margin-bottom">Members: {% for member in members %} {{member}} <span class='color theme'>|</span> {% endfor %}</p>
+			<a id="add-more-members" class="margin-top text bold button small" href="#">Add more members!</a>
+			{% if message %}
+				<p>{{message}}</p>
+			{% endif %}
+			<div id="add-more-members-form" class="column_4 padding none">
+			<span>Enter the email address of the person you'd like to add to your organization</span>
+				<form id="more-users" action='' method="POST">
+					{% csrf_token %}
+					{{ adduserform.as_table }}
+					<button id="submit">Add</button>
+				</form>
+			</div>
+		</div>
+		
+		<div class=" column_6 padding margin-top">
+			<h2 class="margin-bottom">Your Details</h2>
+			<div class="margin-top column_4">
+				<p class="on-left">email: {{ user.email }} </p>
+				<a href="{% url 'watsan.views.change_user_email' %}" class="button secondary tiny on-right">Change</a>
+			</div>
+			<div class="margin-top margin-bottom column_4">
+				<p class="on-left">name: {% if user.first_name or user.last_name %} {{ user.first_name }}  {{ user.last_name }} {% else %} None Provided {% endif %}</p>
+				<a href="{% url 'watsan.views.change_user_name' %}" class="button secondary tiny on-right">Change</a>
+			</div>
+			<div class="margin-top column_4">
+				<a class="button tiny secondary on-right" href="{% url 'django.contrib.auth.views.password_change' %}">Change password</a>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#add-more-members').click(function(e){
+			e.preventDefault();
+			$('#add-more-members-form').toggle();
+			if($(this).hasClass('success')){
+				$(this).removeClass('success').addClass('secondary');
+			}else{
+				$(this).removeClass('secondary').addClass('success');
+			}
+		});
+	});
+	</script>
+{% endblock %}
+		

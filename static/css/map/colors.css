@@ -1,0 +1,53 @@
+li {
+	transition: all 500ms;
+	-moz-transition: all 500ms;
+	-webkit-transition: all 500ms;
+	-o-transition: all 500ms;
+}
+li:hover, li.hovering {
+	transition: all 300ms;
+	-moz-transition: all 300ms;
+	-webkit-transition: all 300ms;
+	-o-transition: all 300ms;
+}
+
+/* COLORS */
+.green { color: #A5C094; fill: #A5C094; }
+.blue {	color: #87cefa; fill: #87cefa; }
+.red { color: #ffa07a; fill: #ffa07a; }
+.pink { color: hotpink; fill: hotpink; }
+.purple { color: #da70d6; fill: #da70d6; }
+.yellow { color: gold; fill: gold; }
+.brown { color: #deb887; fill: #deb887; }
+.grey {	color: #999; fill: #999; }
+.dark-grey { color: #626262; fill: #626262; }
+.white { color: white; fill: white; stroke: white;}
+.black { color: #333; fill: #333; stroke: #333;}
+.gentle-green { color: #A5C094; fill: #A5C094; }
+.gentle-blue {	color: #97B7BF; fill: #97B7BF; }
+.gentle-red { color: #D57879; fill: #D57879; }
+.gentle-pink { color: hotpink; fill: hotpink; }
+.gentle-purple { color: #BD91BE; fill: #BD91BE; }
+.gentle-yellow { color: #D6B678; fill: #D6B678; }
+.gentle-brown { color: #deb887; fill: #deb887; }
+.background-green { background-color: #A5C094; fill: #A5C094; }
+.background-blue {	background-color: #97B7BF; fill: #97B7BF; }
+.background-red { background-color: #D57879; fill: #D57879; }
+.background-pink { background-color: #E6A1C3; fill: #DE85B2; }
+.background-purple { background-color: #BD91BE; fill: #BD91BE; }
+.background-yellow { background-color: #D6B678; fill: #D6B678; }
+.background-brown { background-color: #deb887; fill: #deb887; }
+.background-grey {	background-color: #999; fill: #999; }
+.background-white { background-color: white; fill: white; stroke: white;}
+.background-black { background-color: #333; fill: #333; stroke: #333;}
+.background-dark-grey {	background-color: #626262; fill: #626262; }
+
+li.pink:hover, li.pink.hovering { color: hotpink; background-color: #626262; }
+li.red:hover, li.red.hovering { color: #ff826c; background-color: #626262; }
+li.blue:hover, li.blue.hovering {	color: lightskyblue; background-color: #626262; }
+li.purple:hover, li.purple.hovering { color: orchid; background-color: #626262; }
+li.green:hover, li.green.hovering { color: #A5C094; background-color: #626262; }
+li.yellow:hover, li.yellow.hovering { color: gold; background-color: #626262; }
+li.brown:hover, li.brown.hovering { color: #D6B678; background-color: #626262; }
+li.grey:hover, li.grey.hovering {	color: #999; background-color: #626262; }
+li.white:hover, li.white.hovering { color: white; background-color: #626262; }

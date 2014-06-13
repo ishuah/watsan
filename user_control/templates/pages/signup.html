@@ -1,0 +1,29 @@
+{% extends "base_map/base.html" %}
+
+{% block header_content %}
+{% endblock %}
+
+{% block content %}
+	<div id='small-box' class="text-center">
+		<h1 class="page-title">Sign Up</h1>
+		{% if userform %}
+		<form action="{% url 'signup' %}" method="POST">
+			{% csrf_token %}
+			<table>
+			 {% for field in userform %}
+				<tr>
+					<td>{{ field.label_tag }} {% if not field.field.required %} <label>(optional)</label> {% endif %}</td>
+					<td>{{ field.errors }}{{ field }}</td>
+				</tr>
+			{% endfor %}
+			</table>
+			<div class='placeholder'>
+				<div id='goto'><p>Already have an account? <a href="{% url 'default_login' %}">Sign In</a></p></div>
+				<button id='done' class="btn success medium" type="submit" name="submit">Sign up</button> 
+			</div>
+		</form>
+		{% else %}
+		<p>Almost there! A confirmation email has been sent to your email address. Click the link in your email to access yur account.</p>
+		{% endif %}
+	</div>
+{% endblock %}

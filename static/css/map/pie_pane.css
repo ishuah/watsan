@@ -1,0 +1,132 @@
+#pie-graph-pane {
+	position: absolute;
+	bottom: 25px;
+	left:25px;
+	width: 30%;
+	max-width: 270px;
+	background-color: rgba(255, 255, 255, 0.8);
+	box-shadow: 0 2px 6px rgba(0,0,0,0.3), 0 -3px 8px rgba(0,0,0,0.2);
+	border-radius: 2px;
+	pointer-events: all;
+}
+#pie-graph-pane .graph {
+    display: none;
+}
+#pie-graph-pane .graph.active {
+    display: block;
+    border: 1px solid #333;
+}
+
+.tab-content .pie .graph, .tab-content .pie .choice-list {
+    filter: url(filters.svg#grayscale);
+    filter: gray;
+    -webkit-filter: grayscale(0.85);
+}
+
+.tab-content.pies .graph {
+	max-height: 300px;
+	max-width: 300px;
+	color: #626262;
+	margin: 10px auto;
+	width: 90%;
+}
+#pie-graph-pane .graph > svg, #pie-graph-pane .graph .pieSvg {
+	width:100%;
+	height: 100%;
+}
+#pie-graph-pane .arc path {
+	cursor: pointer;
+	stroke: "white";
+	stroke-width: 0px;
+}
+#pie-graph-pane .arc text {
+	color: #626262;
+	fill: #626262;
+	text-anchor: middle;
+	pointer-events: none;
+}
+
+.tab-content.pies .choice-list .options-arrow {
+	float: right;
+	border-bottom: 0;
+	border-top: 8px solid #e3e4d8;
+	border-right: 6px solid transparent;
+	border-left: 6px solid transparent;
+	margin-top: 8px;
+	display: none;
+}
+.tab-content.pies .choice-list > li:hover .options-arrow {
+	display: block;
+} 
+#legend-li-options {
+	position: absolute;
+	background-color: rgba(98, 98, 98, 0.8);
+	padding: 0 10px 10px 10px;
+	border-radius: 2px;
+	pointer-events: all;
+	color: white;
+	z-index: 150;
+}
+#legend-li-options p {
+	margin: 7px;
+	text-align: center;
+}
+#legend-li-options .remove {
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin: 5px;
+	cursor: pointer;
+}
+#legend-li-options li {
+	margin: 5px;
+	border-radius: 2px;
+	height: 1.5em;
+	width: 120px;
+	cursor: pointer;
+}
+#legend-li-options li .typicn {
+	margin: 0 5px;
+	font-size: 1.5em;
+	color: #333;
+}
+#legend-li-options li:hover, #legend-li-options li.current {
+	width: 130px;
+}
+.choice-checkbox {
+	pointer-events: none;
+}
+
+.tab-content.pies .choice-list li.grayscale {
+	filter: url(filters.svg#grayscale);
+    filter: gray;
+    -webkit-filter: grayscale(0.85);
+}
+.tab-content.pies .choice-list li .arrow-border {
+	position: absolute;
+	left: 30px;
+	border-right: 0;
+	border-left: 15px solid rgba(98, 98, 98, 0.8);
+	border-top: 14px solid transparent;
+	border-bottom: 14px solid transparent;
+}
+
+.tab-content.pies .choice-list.uncolored li {
+	color: white;
+	background-color: #626262;
+}
+.tab-content.pies .choice-list.uncolored li.grey {
+	color: #626262;
+	background-color: #999;
+	border-color: #626262;
+}
+.tab-content.pies .choice-list.uncolored li:hover, .tab-content.pies .choice-list.uncolored li.hovering {
+	color: #626262;
+	background-color: white;
+}
+.tab-content.pies .choice-list.uncolored > li:last-child {
+	border-bottom: 1px solid #999;
+}
+.tab-content.pies li a {
+	pointer-events: none;
+}

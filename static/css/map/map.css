@@ -1,0 +1,156 @@
+#map-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: auto;
+	z-index: 20;
+	pointer-events: none;
+}
+#map-overlay.fixed {
+	position: fixed;
+	top: 0;
+}
+#map_canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+	background-image: url('/static/images/bg.jpg');
+	border-bottom: 1px solid #999;
+	-webkit-box-shadow: -1px -1px 10px rgba(0, 0, 0, .115);
+	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	box-shadow: -1px -1px 10px rgba(0, 0, 0, .115);
+}
+
+#map_canvas path {
+	cursor: pointer;
+}
+#map_canvas path.active {
+	width: 40px;
+	height: 40px;
+	margin: 100px auto;
+	background-color: #333;
+
+	border-radius: 100%;  
+	-webkit-animation: scaleout 1.0s infinite ease-in-out;
+	animation: scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes scaleout {
+	0% { -webkit-transform: scale(0.0) }
+	100% {
+		-webkit-transform: scale(1.0);
+		opacity: 0;
+	}
+}
+
+@keyframes scaleout {
+	0% { transform: scale(0.0) }
+	100% {
+		transform: scale(1.0);
+		opacity: 0;
+	}
+}
+
+#map-overlay.embedded, #map_canvas.embedded {
+	top: 0;
+}
+
+.map-pane, .card {
+	color: #626262;
+	background-color: white;
+	border: 1px solid #626262;
+	border-radius: 2px;
+	-webkit-box-shadow: -1px -1px 10px rgba(0, 0, 0, .115);
+	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	box-shadow: -1px -1px 10px rgba(0, 0, 0, .115);
+	pointer-events: visible;
+}
+
+#main-pane {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 25px;
+	bottom: 0;
+}
+
+#mapped-things {
+	text-transform: capitalize;
+}
+
+#other-option {
+	padding: 0 30px;
+}
+
+#spinner {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 10000;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+.progress-meter .background {
+	fill: #e3e4d8;
+}
+.progress-meter .foreground {
+	fill: #999;
+}
+.progress-meter .foreground.dark {
+	fill: #626262;
+}
+
+.hide-btn {
+	position: absolute;
+	pointer-events: visible;
+	z-index: 10;
+	cursor: pointer;
+	background-color: rgba(98, 98, 98, 0.1);
+}
+.hide-btn .arrow {
+	display: block;
+	position: absolute;
+	height: 0;
+	width: 0;
+}
+.hide-btn:hover {
+	background-color: rgba(98, 98, 98, 0.35);
+}
+
+.mapToggle, .zoom-control {
+	pointer-events: all;
+	text-transform: capitalize;
+	cursor: pointer;
+	border-radius: 5px;
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;
+	margin: 0 5px;
+}
+
+.glass-btn {
+	color: rgba(98, 98, 98, 0.8);
+	background-color: #e3e4d8;
+	-webkit-box-shadow: -1px -1px 10px rgba(0, 0, 0, .115);
+	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	box-shadow: -1px -1px 10px rgba(0, 0, 0, .115);
+}
+.glass-btn:hover, li:hover .glass-btn, .glass-btn.selected, li.selected .glass-btn, .glass-btn:active, li:active .glass-btn {
+	color: #e3e4d8;
+	background-color: rgba(98, 98, 98, 0.8);
+}
+
+#data_table {
+	margin: 75px auto 0;
+	width: 100%;
+	height: 85%;
+}
+
+.leaflet-control-attribution {
+	margin-right: 10px !important;
+}

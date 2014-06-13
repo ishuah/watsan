@@ -1,0 +1,402 @@
+body {
+	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+ul, ol {
+	margin: 0;
+	padding: 0;
+}
+
+#popup-space {
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	z-index: 100;
+	pointer-events: none;
+	width: 100%;
+}
+.popup {
+	display: block;
+	background-color: #ffe900;
+	color: #333;
+	border-radius: 2px;
+	padding: 5px 10px;
+	text-align: center;
+	font-size: 1.3em;
+	pointer-events: all;
+	-webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	border: 1px solid #c3c3c3;
+	margin: 0 auto;
+	width: 300px;
+}
+
+#overlay {
+	position: absolute;
+	top: 0;
+	right: 2em;
+	left: 2em;
+	bottom: 0;
+}
+
+.side-pane {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 25%;
+	z-index: 20;
+	height: auto;
+	overflow: auto;
+	pointer-events: none;
+}
+#left-pane {
+	left: 0;
+	margin: 10px 0;
+	z-index: 25;
+	width: 250px;
+}
+#right-pane {
+	right: 0;
+	margin-top: 10px;
+	min-width: 270px;
+}
+
+.side-pane .card {
+	width: 100%;
+	background-color: white;
+	border-radius: 2px;
+	margin-bottom: 20px;
+	pointer-events: visible;
+	-webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, .115);
+}
+.side-pane .card.closed {
+	padding-bottom: 0px;
+}
+.side-pane .dynamic.card {
+	font-size: 1.7em;
+	overflow: auto;
+}
+
+#search-pane {
+	background-color: #ffc000;
+	color: #58585a;
+	-webkit-box-shadow: 0 1px 7px rgba(0,0,0,0.65);
+	-moz-box-shadow: 0 1px 7px rgba(0,0,0,0.65);
+	box-shadow: 0 1px 7px rgba(0,0,0,0.65);
+	width: 250px;
+	border: 1px solid white;
+	min-height: 54px;
+}
+#search-pane .input {
+	margin: 7px 10px 0px 10px;
+}
+#search-pane .input a {
+	display: inline;
+	font-size: 1.4em;
+	line-height: 25px;
+	float: right;
+	padding: 5px;
+	border-radius: 2px;
+	cursor: pointer;
+	border: 1px solid transparent;
+}
+#search-pane .input input {
+	width: 170px;
+	display: inline-block;
+	background-color: #ffc000;
+	color: #58585a;
+	border-radius: 2px;
+	outline: none;
+	border: none;
+	padding: 0 5px;
+}
+#search-pane .input input::-webkit-input-placeholder { /* WebKit browsers */
+    color: #58585a;
+    font-weight: bold;
+}
+#search-pane .input input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #58585a;
+    font-weight: bold;
+}
+#search-pane .input input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #58585a;
+    font-weight: bold;
+}
+#search-pane .input input:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #58585a;
+    font-weight: bold;
+}
+#search-pane:hover .input input::-webkit-input-placeholder, #search-pane .input input:active::-webkit-input-placeholder, #search-pane .input input:focus::-webkit-input-placeholder { /* WebKit browsers */
+    color: #58585a;
+}
+#search-pane:hover .input input:-moz-placeholder, #search-pane .input input:active:-moz-placeholder, #search-pane .input input:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #58585a;
+}
+#search-pane:hover .input input::-moz-placeholder, #search-pane .input input:active::-moz-placeholder, #search-pane .input input:focus::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #58585a;
+}
+#search-pane:hover .input input:-ms-input-placeholder, #search-pane .input input:active:-ms-input-placeholder, #search-pane .input input:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #58585a;
+}
+#search-pane:hover .input input, #search-pane .input input:active, #search-pane .input input:focus {
+	color: #58585a;
+	background-color: white;
+}
+#search-pane:hover .input a {
+	border: 1px solid #58585a;
+}
+#search-list {
+	display: inline-block;
+	list-style: none;
+	width: 100%;
+	overflow-y: auto;
+}
+#search-pane .close {
+	width: 100%;
+	height: 20px;
+	cursor: pointer;
+	padding: 5px;
+}
+#search-pane .close:hover {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+#search-pane .close .arrow {
+	width: 10px;
+	margin: 0 auto;
+	border-top: 0 solid white;
+	border-bottom: 10px solid white;
+	border-right: 10px solid transparent;
+	border-left: 10px solid transparent;
+}
+#search-pane.closed .close .arrow {
+	border-top: 10px solid white;
+	border-bottom: 0px solid white;
+}
+#search-pane .typicn {
+	margin: 0;
+}
+#search-icon.loading {
+	width: 31px;
+	height: 31px;
+	background-image: url('/static/images/ajax-loader.gif');
+	display: block;
+	border-radius: 2px;
+}
+#search-input #clear-search {
+	right: 20px;
+}
+#search-list li.result:first-child {
+	margin-top: 10px;
+}
+#search-list li.result:last-child {
+	margin-bottom: 10px;
+}
+#search-list li.result, #search-list li#no-matches {
+	background-color: white;
+	color: black;
+	text-align: left;
+	cursor: pointer;
+	padding: 0 5px;
+	margin: 0 10px;
+	border-bottom: 1px solid #ffe900;
+}
+#search-list li#no-matches {
+	background-color: #d57879;
+	color: white;
+	cursor: auto;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	border-radius: 2px;
+}
+
+#gps {
+	background-color: transparent;
+	color: #ffc000;
+	pointer-events: all;
+	margin-bottom: 10px;
+}
+#show-coords {
+	width: 100%;
+	display: block;
+	text-align: right;
+	cursor: pointer;
+}
+#coords-pane {
+	background-color: white;
+	margin-top: 40px;
+}
+#coords-pane .input {
+	width: 80%;
+	text-align: center;
+	margin: 10px auto;
+}
+#coords-pane .input a {
+	display: block;
+	margin: 0 auto;
+}
+#coords-pane .input input {
+	width: 100%;
+	display: inline-block;
+}
+#coords-pane p {
+	margin-bottom: 10px;
+}
+#coords-pane .close {
+	float: right;
+	margin-right: 5px;
+	cursor: pointer;
+}
+
+#right-pane #site-details {
+	width: 100%;
+	margin-top: 40px;
+}
+#right-pane #site-details .card h3, #right-pane #site-details .card p, #right-pane #site-details .card h4 {
+	display: inline;
+}
+#site-details .more {
+	text-align: center;
+	padding: 5px;
+	color: white;
+	text-decoration: underline;
+	cursor: pointer;
+}
+#site-details .card-details {
+	padding: 0 10px;
+}
+#site-details .card input {
+	width: 160px;
+	text-align: left;
+    background: none;
+    font-size: 2em;
+    border: none;
+    border-radius: 2px;
+    padding: 0 10px;
+    margin: 5px 10px;
+    border: 1px solid transparent;
+    color: white;
+}
+#site-details .card table {
+	border-collapse: collapse;
+	margin: 0;
+	background-color: white;
+	border-radius: 2px;
+}
+#site-details .card table td {
+	padding: 0 0.5em;
+}
+.card tr.trans-red, #right-pane .card tr.trans-green {
+	border-top: 3px solid white;
+}
+#site-details .card input:hover, #right-pane #site-details .card input:active, #right-pane #site-details .card input:focus {
+	border: 1px solid black;
+	background-color: white;
+	color: black;
+}
+#site-details .card .label {
+	text-align: right;
+	font-weight: bold;
+}
+#site-details .card .answer {
+	text-align: left;
+}
+#site-details .card .neutral {
+	font-weight: bold;
+	margin-left: 10px;
+}
+#site-details .card .delete {
+	font-size: 1.5em;
+	float: right;
+	width: 30px;
+	cursor:pointer;
+	padding-top: 5px;
+	text-align: center;
+	color: red;
+	background-color: white;
+	margin: 5px 10px;
+	line-height: 1em;
+	border-radius: 2px;
+	border: 1px solid #333;
+}
+#site-details .card .delete:hover {
+	background-color: #999;
+}
+#right-pane .card .arrow {
+	border-bottom: 0;
+	border-top: 10px solid white;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	padding: 0;
+	float: left;
+	margin: 12px 0 0 15px;
+	width: 0;
+	height: 0;
+	cursor: pointer;
+}
+#right-pane .card .arrow.closed {
+	border-right: 0;
+	border-left: 10px solid white;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+}
+
+#dialog-view {
+	display: none;
+	position: absolute;
+	top: 35%;
+	left: 0;
+	right: 0;
+	overflow: auto;
+	z-index: 90;
+	pointer-events: all;
+	background-color: rgba(139, 139, 139, 0.85);
+	text-align: center;
+}
+#dialog-content {
+	margin: 10px auto;
+	width: 500px;
+}
+#dialog-content  .header {
+	font-size: 1.4em;
+}
+#dialog-content h4 {
+	margin: 0;
+}
+#dialog-content p {
+	margin: 5px;
+}
+#dialog-content .btn {
+	width: 170px;
+	height: 60px;
+	margin: 15px 0;
+	font-size: 1.3em;
+}
+#dialog-content .btn.more {
+	float: left;
+}
+#dialog-content .btn.done {
+	float: right;
+}
+
+.error {
+	background-color: #d57879;
+	color: white;
+}
+.error:hover {
+	color: #d57879;
+}
+.success {
+	background-color: #508A12;
+	color: white;
+}
+.success:hover {
+	color: #508A12;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}

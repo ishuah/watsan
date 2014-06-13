@@ -1,0 +1,24 @@
+{% extends "watsan/empty_header.html" %}
+
+	{% block pagenav %}
+		{% url 'watsan.views.register_org' as org_url %}
+		{% url 'watsan.views.register_user' as user_url %}
+		{% url 'watsan.views.register_final' as final_url %}
+
+		<span><span class='typicn typcn-business-card'></span></span>
+    	<a class="{% if request.path == org_url %} active {% endif %}" href="{{ org_url }}">Organization Details</a>
+    	{% if request.path == user_url or request.path == final_url %}
+    		<span class='typicn typcn-arrow-right-thick'></span>
+    	{% endif %}
+    	<a class="{% if request.path == user_url %} active {% elif request.path == org_url %} incomplete {% endif %}" href="{{ user_url }}">Your Details</a>
+    	{% if request.path == final_url %}
+    		<span class='typicn typcn-arrow-right-thick'></span>
+    	{% endif %}
+    	<a class="{% if request.path == final_url %} active {% else %} incomplete {% endif %}" href="{{ final_url}}">How did you hear about the Portal?</a>
+	{% endblock %}
+
+	{% block sysnav %}
+		<span>Already Registered?
+		<a href="/watsan/login/" class='button'>Log in</a></span>
+		<br>
+	{% endblock %}

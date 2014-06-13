@@ -1,0 +1,23 @@
+{% extends "base_map/base.html" %}
+
+{% block content %}
+	<div id="small-box">
+		<h1 class="page-title text-center">Password Reset</h1>
+		<p>Enter your email address, you will receive a link that will direct you to a reset page.</p>
+		<form class="text-center" action="" method="POST">
+			{% csrf_token %}
+			{% if form.email.errors %}
+				{{ form.email.errors }}
+			{% endif %}
+			<label class='padding-right'>Email:</label>
+			{{ form.email }}
+			<div class='placeholder'>
+				<div id='goto'>
+					<a href="{% url 'default_login' %}">Log In</a>
+					<a href="{% url 'signup' %}">Sign Up</a>
+				</div>
+				<input id='done' class="btn success medium" type="submit" name="submit" value='Submit' />
+			</div>
+		</form>	
+	</div>
+{% endblock %}

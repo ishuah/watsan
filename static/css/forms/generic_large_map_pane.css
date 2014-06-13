@@ -1,0 +1,77 @@
+.large.map-pane {
+	position:absolute;
+	left: 160px;
+	right: 160px;
+	top: 126px;
+	bottom: 3em;
+	border-radius: 0 0 20px 20px;
+	overflow: auto;
+	z-index: 75;
+}
+
+.large.map-pane h2 {
+	padding: 15px 0;
+	border-bottom: 1px solid white;
+	text-align: center;
+}
+.large.map-pane h2, .large.map-pane ul.tab-btn-list {
+	margin-left: auto;
+	margin-right: auto;
+	width: 310px;
+}
+
+.large.map-pane .close-btn {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	padding: 0 5px;
+	border-radius: 20px;
+	color: white;
+}
+.large.map-pane .close-btn:hover {
+	color: #626262;
+	background-color: white;
+}
+.large.map-pane h2 .header-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 10px;
+	padding: 0 8px;
+	height: 30px;
+		
+	text-decoration: none;
+	color: white;
+}
+.large.map-pane h2 .left {
+	left: 0;
+}
+.large.map-pane h2 .right {
+	right: 0;
+}
+.large.map-pane h2 .header-btn:hover {
+	border-radius: 20px;	
+	background-color: white;
+	color: #626262;
+}
+
+.form-tab-btn, .tab-btn {
+	border-radius: 5px;
+}
+
+.large.map-pane ul.main {
+	width: 100%;
+	text-align: left;
+	overflow: auto;
+	margin: 10px 0 92px 0;
+}
+.large.map-pane li.main {
+	border-radius: 20px;
+	margin: 0 30px;
+	padding: 0 15px;
+}
+
+.large.map-pane a {
+	cursor: pointer;
+	display: block;
+}
