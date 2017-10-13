@@ -1,10 +1,12 @@
 from django.utils.datetime_safe import datetime
+from django.utils import timezone
 from django.contrib.gis.db import models
 from base_map.models.shapes import *
 from django.contrib.gis.geos import *
 from django.contrib.gis.measure import D
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
+from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelation
 import base_map
 import math
 
@@ -30,7 +32,7 @@ class Landmark(ShapeMixin, models.Model):
 
     visible = models.BooleanField(default=True)
 
-    _shape = generic.GenericRelation(Shape, content_type_field='content_type', object_id_field='object_id')
+    _shape = GenericRelation(Shape, content_type_field='content_type', object_id_field='object_id')
 
     objects = GeoInheritanceManager()
 
@@ -53,7 +55,7 @@ class Road(ShapeMixin, models.Model):
     name = models.CharField(max_length=500)
     road_type = models.CharField(max_length=500)
 
-    _shape = generic.GenericRelation(Shape, content_type_field='content_type', object_id_field='object_id')
+    _shape = GenericRelation(Shape, content_type_field='content_type', object_id_field='object_id')
 
     class Meta:
         ordering = ['name']
@@ -67,7 +69,7 @@ class SearchResult(ShapeMixin, models.Model):
     name = models.CharField(max_length=500)
     search_engine = models.CharField(max_length=500)
 
-    _shape = generic.GenericRelation(Shape, content_type_field='content_type', object_id_field='object_id')
+    _shape = GenericRelation(Shape, content_type_field='content_type', object_id_field='object_id')
 
     class Meta:
         ordering = ['name']
@@ -80,7 +82,7 @@ class SearchResult(ShapeMixin, models.Model):
 class SewerLine(ShapeMixin, models.Model):
     name = models.CharField(max_length=50)
     size = models.CharField(max_length=50)
-    _shape = generic.GenericRelation(Shape, content_type_field='content_type', object_id_field='object_id')
+    _shape = GenericRelation(Shape, content_type_field='content_type', object_id_field='object_id')
 
     class Meta:
         ordering = ['name']
@@ -93,7 +95,7 @@ class SewerLine(ShapeMixin, models.Model):
 class WaterLine(ShapeMixin, models.Model):
     name = models.CharField(max_length=50)
     size = models.CharField(max_length=50)
-    _shape = generic.GenericRelation(Shape, content_type_field='content_type', object_id_field='object_id')
+    _shape = GenericRelation(Shape, content_type_field='content_type', object_id_field='object_id')
 
     class Meta:
         ordering = ['name']
@@ -106,7 +108,7 @@ class WaterLine(ShapeMixin, models.Model):
 
 class Village(ShapeMixin, models.Model):
     name = models.CharField(max_length=50, default="")
-    _shape =generic.GenericRelation(Shape, content_type_field='content_type', object_id_field='object_id')
+    _shape =GenericRelation(Shape, content_type_field='content_type', object_id_field='object_id')
 
     class Meta:
         ordering = ['name']
@@ -120,10 +122,10 @@ class Site(ShapeMixin, models.Model):
     user = models.ForeignKey(User, blank=True, null=True)
 
     name = models.CharField(max_length=50)
-    _shape = generic.GenericRelation(Shape, content_type_field='content_type', object_id_field='object_id')
+    _shape = GenericRelation(Shape, content_type_field='content_type', object_id_field='object_id')
 
     saved = models.BooleanField(default=False)
-    date_created = models.DateTimeField(default=datetime.now)
+    date_created = models.DateTimeField(default=timezone.now())
     color = models.CharField(max_length=100)
     
     class Meta:
@@ -233,7 +235,7 @@ class Project(models.Model):
 
 class Manhole(models.Model):
     name = models.CharField(max_length=50)
-    _shape = generic.GenericRelation(Shape, content_type_field='content_type', object_id_field='object_id')
+    _shape = GenericRelation(Shape, content_type_field='content_type', object_id_field='object_id')
 
     class Meta:
         app_label = 'watsan'

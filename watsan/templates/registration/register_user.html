@@ -1,0 +1,18 @@
+{% extends "registration/base.html" %}
+
+	{% block title %}Your Details{% endblock %}
+
+	{% block content %}
+		<form class="column_8 offset_2" method='post' action="/register/user/">
+			{% csrf_token %}
+			{% for field in org_form %}
+				{{ field.as_hidden }}
+			{% endfor %}
+			<table>
+				{{ user_form.as_table }}
+			</table>
+			<div id="btns">
+				<input class='button next' type='submit' id="submit" value="Next  &#xe01a;" tabindex="1"/>
+			</div>
+		</form>
+	{% endblock %}

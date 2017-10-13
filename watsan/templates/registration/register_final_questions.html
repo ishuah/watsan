@@ -1,0 +1,44 @@
+{% extends "registration/base.html" %}
+
+	{% block title %}How did you hear about the Portal?{% endblock %}
+
+	{% block content %}
+		<form class="column_8 offset_2" method='post' action="/register/final/">
+			{% csrf_token %}
+			{% for field in org_form %}
+				{{ field.as_hidden }}
+			{% endfor %}
+			{% for field in user_form %}
+				{{ field.as_hidden }}
+			{% endfor %}
+			<table>
+				<input type='hidden' name='user_id' value='{{ user.id }}'>
+				{{ meta_form }}
+			</table>
+			<div id="btns">
+				<input class="button" type='submit' id="submit" value="Done" tabindex="1"/>
+			</div>
+		</form>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#id_question_1_8').parent().parent().append("<input id='id_question_1_8_input' name='question_1_other' class='hide'>");
+				$('#id_question_2_5').parent().parent().append("<input id='id_question_2_5_input' name='question_2_other' class='hide'>");
+
+				$('#id_question_1_8').click(function(){
+					$('#id_question_1_8_input').show();
+				});
+
+				$('#id_question_2_5').click(function(){
+					$('#id_question_2_5_input').show();
+				});
+
+				/*$('#id_question_1_8_input').keyup(function(){
+					$('#id_question_1_8').attr('value', $(this).val());
+				});
+
+				$('#id_question_2_5_input').keyup(function(){
+					$('#id_question_2_5').attr('value', $(this).val());
+				});*/
+			});
+		</script>
+	{% endblock %}

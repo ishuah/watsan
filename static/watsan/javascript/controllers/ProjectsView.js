@@ -7,9 +7,9 @@ WATSAN.ProjectsView = Backbone.View.extend({
 		var name = prompt("Please enter a name for your new project (e.g. Latrine Project 2)", "");
 		if (name != '' && name != null) {
 			var view = this;
-			$.post('/watsan/project/save/', {'name': name})
+			$.post('/project/save/', {'name': name})
 				.success(function(response) {
-					window.location = "/watsan/project/" + response.projectId;
+					window.location = "/project/" + response.projectId;
 				})
 				.error(function() {	alert("Something went wrong, please try reloading the page"); });
 		}

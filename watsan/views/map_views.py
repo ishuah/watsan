@@ -21,17 +21,17 @@ LOGIN_PAGE = 'watsan_landing'
 @permission_required('watsan.access_watsan', login_url=LOGIN_PAGE)
 def dashboard(request):
 	projects = Project.objects.filter(user=request.user).order_by('date_created').reverse()
-	return render(request, 'watsan/dashboard/home.html', { 'projects': projects })
+	return render(request, 'dashboard/home.html', { 'projects': projects })
 
 @login_required(login_url=LOGIN_PAGE)
 @permission_required('watsan.access_watsan', login_url=LOGIN_PAGE)
 def project(request, projectId=None):
 	project = get_object_or_404(Project, pk=projectId)
-	return render(request, 'watsan/dashboard/project.html', { 'project': project })
+	return render(request, 'dashboard/project.html', { 'project': project })
 
 @login_required(login_url=LOGIN_PAGE)
 @permission_required('watsan.access_watsan', login_url=LOGIN_PAGE)
-def map(request, projectId=None):
+def the_map(request, projectId=None):
 	landmarks = Landmark.objects.all()
 	roads = Road.objects.all()
 	sewerlines = SewerLine.objects.all()
@@ -42,7 +42,7 @@ def map(request, projectId=None):
 	else:
 		project = Project.objects.filter(user=request.user).latest('date_created')
 
-	return render(request, 'watsan/map.html', {
+	return render(request, 'map.html', {
 		'landmarks': landmarks, 
 		'roads': roads, 
 		'sewerlines': sewerlines, 
@@ -54,18 +54,18 @@ def map(request, projectId=None):
 @permission_required('watsan.access_watsan', login_url=LOGIN_PAGE)
 def ncwsc(request, projectId=None):
 	project = get_object_or_404(Project, pk=projectId)
-	return render(request, 'watsan/dashboard/ncwsc.html', { 'project': project })
+	return render(request, 'dashboard/ncwsc.html', { 'project': project })
 
 @login_required(login_url=LOGIN_PAGE)
 @permission_required('watsan.access_watsan', login_url=LOGIN_PAGE)
 def alts(request, projectId=None):
 	project = get_object_or_404(Project, pk=projectId)
-	return render(request, 'watsan/dashboard/alts.html', { 'project': project })
+	return render(request, 'dashboard/alts.html', { 'project': project })
 
 @login_required(login_url=LOGIN_PAGE)
 @permission_required('watsan.access_watsan', login_url=LOGIN_PAGE)
 def about(request):
-	return render(request, 'watsan/about.html')
+	return render(request, 'about.html')
 
 @csrf_exempt
 @login_required(login_url=LOGIN_PAGE)
@@ -147,7 +147,7 @@ def check_site_placement(request):
 		site = Site(name='none', color='none', user=request.user)
 		try:
 			site.save()
-			site._shape.add(base_map.models.Point(shape=point))
+			site._shape.add(base_map.models.Point(shape=point), bulk=False)
 			site.save()
 			if site.is_within():
 				site_data = '''{

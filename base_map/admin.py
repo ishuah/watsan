@@ -1,20 +1,20 @@
 from django.contrib import admin
-from django.contrib.contenttypes import generic
+from django.contrib.contenttypes.admin import GenericTabularInline
 from base_map.models import   Point, Polygon, MultiPolygon, Line
 
-class PointInline(generic.GenericTabularInline):
+class PointInline(GenericTabularInline):
     max_num = 1
     model = Point
     
-class PolygonInline(generic.GenericTabularInline):
+class PolygonInline(GenericTabularInline):
     max_num = 1
     model = Polygon
 
-class MultiPolygonInline(generic.GenericTabularInline):
+class MultiPolygonInline(GenericTabularInline):
     max_num = 1
     model = MultiPolygon
     
-class LineInline(generic.GenericTabularInline):
+class LineInline(GenericTabularInline):
     max_num = 1
     model = Line
 

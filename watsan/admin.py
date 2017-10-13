@@ -1,20 +1,20 @@
 from django.contrib import admin
-from django.contrib.contenttypes import generic
+from django.contrib.contenttypes.admin import GenericTabularInline
 from watsan.models.users import WatsanUserMeta
 from watsan.models.organizations import Organization
 from watsan.models.change_email import NewEmail
 from watsan.models.basemap import Landmark, Road, Site, SearchResult, SewerLine, WaterLine, Village, Project, Manhole
 from base_map.models import Shape, Point, Polygon, MultiPolygon, Line
 
-class PointInline(generic.GenericTabularInline):
+class PointInline(GenericTabularInline):
     max_num = 1
     model = Point
 
-class LineInline(generic.GenericTabularInline):
+class LineInline(GenericTabularInline):
     max_num = 1
     model = Line
 
-class PolygonInline(generic.GenericTabularInline):
+class PolygonInline(GenericTabularInline):
     max_num = 1
     model = Polygon
 

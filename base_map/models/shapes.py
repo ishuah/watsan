@@ -1,6 +1,6 @@
 from django.contrib.gis.db import models
 from django.contrib.contenttypes.models import ContentType
-from django.contrib.contenttypes import generic
+from django.contrib.contenttypes.fields import GenericForeignKey
 from base_map.models.inheritance_managers import *
 
 class ShapeMixin(object):
@@ -16,7 +16,7 @@ class ShapeMixin(object):
 class Shape(models.Model):
     object_id = models.PositiveIntegerField()
     content_type = models.ForeignKey(ContentType)
-    content_object = generic.GenericForeignKey('content_type', 'object_id')
+    content_object = GenericForeignKey('content_type', 'object_id')
     
     objects = GeoInheritanceManager()
     geo_objects = models.GeoManager()

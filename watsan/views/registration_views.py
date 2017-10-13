@@ -19,10 +19,10 @@ def register_org(request):
 		if org_form.is_valid():
 
 			user_form = RegisterUserForm()
-			return  render(request, 'watsan/registration/register_user.html', { 'user_form': user_form, 'org_form': org_form}) #redirect('/watsan/register/user') 
+			return  render(request, 'registration/register_user.html', { 'user_form': user_form, 'org_form': org_form}) #redirect('/watsan/register/user') 
 	else:
 		org_form = OrganizationForm()
-	return render(request, 'watsan/registration/register_org.html', { 'org_form': org_form})
+	return render(request, 'registration/register_org.html', { 'org_form': org_form})
 
 def register_user(request):
 	if request.method == 'POST':
@@ -30,12 +30,12 @@ def register_user(request):
 		org_form = OrganizationForm(request.POST)
 		if user_form.is_valid() and user_form.clean_password() and user_form.clean_email():
 			meta_form = UserMetaForm()
-			return render(request, 'watsan/registration/register_final_questions.html', { 'meta_form': meta_form, 'org_form': org_form, 'user_form': user_form }) #redirect('/watsan/register/final')
+			return render(request, 'registration/register_final_questions.html', { 'meta_form': meta_form, 'org_form': org_form, 'user_form': user_form }) #redirect('/watsan/register/final')
 		
-		return render(request, 'watsan/registration/register_user.html', { 'user_form': user_form, 'org_form': org_form})
+		return render(request, 'registration/register_user.html', { 'user_form': user_form, 'org_form': org_form})
 	else:
 		user_form = RegisterUserForm()
-		return render(request, 'watsan/registration/register_user.html', { 'user_form': user_form})
+		return render(request, 'registration/register_user.html', { 'user_form': user_form})
 
 def register_final(request):
 	if request.method == 'POST':
@@ -67,9 +67,9 @@ def register_final(request):
 
 			loggedInUser = authenticate(username=user.username, password=user_form.clean_password())
 			login(request, loggedInUser)
-			return redirect('/watsan/dashboard/')
+			return redirect('/dashboard/')
 			
-		return render(request, 'watsan/registration/register_final_questions.html', {'meta_form': meta_form, 'user_form': user_form, 'org_form': org_form })
+		return render(request, 'registration/register_final_questions.html', {'meta_form': meta_form, 'user_form': user_form, 'org_form': org_form })
 	else:
 		meta_form = UserMetaForm()
-		return render(request, 'watsan/registration/register_final_questions.html', { 'meta_form': meta_form})
+		return render(request, 'registration/register_final_questions.html', { 'meta_form': meta_form})

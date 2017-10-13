@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>WATSAN Portal: Kibera</title>
+		<link rel="icon" type="image/png" href="/static/watsan/img/WATSAN_logo.png">
+		<link rel="stylesheet" type="text/css" href="/static/watsan/css/main.css" /></script>
+		<link rel="stylesheet" type="text/css" href="/static/watsan/css/header.css" /></script>
+		<link rel="stylesheet" type="text/css" href="/static/watsan/css/tuktuk.css" /></script>
+		<link rel="stylesheet" type="text/css" href="/static/watsan/css/tuktuk.theme.css" /></script>
+		<link rel="stylesheet" type="text/css" href="/static/watsan/css/tuktuk-custom.css" /></script>
+		{% include "tracking.html" %}
+	</head>
+	<body>
+		{% block header %}{% endblock %}
+		<img src='/static/watsan/img/NairobiAerial.png' id='background' alt="WATSAN Portal: Kibera"></img>
+		<div id="landing" class="center-container">
+			<h1><a href="{% url 'watsan_landing' %}" id='logo'><img src='/static/watsan/img/WATSAN_logo.png' alt="WATSAN Portal: Kibera"></img></a></h1>
+			{% block content %}
+				<div id="buttons" class="text-center margin">
+					<a class="button margin" href="{% url 'watsan_register' %}">Register</a>
+					<a id="sign-in" href="{% url 'watsan_login' %}" class="button margin">Sign in</a>
+				</div>
+			{% endblock %}
+		</div>
+	</body>
+</html>

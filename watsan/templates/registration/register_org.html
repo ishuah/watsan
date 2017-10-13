@@ -1,0 +1,15 @@
+{% extends "registration/base.html" %}
+
+{% block title %}Organization Details{% endblock %}
+
+{% block content %}
+	<form class="column_8 offset_2" method='post' action="/register/org/">
+		{% csrf_token %}
+		<table>
+			{{ org_form }}
+		</table>
+		<div id="btns">
+			<input class='button next' type='submit' id="submit" value="Next  &#xe01a;" tabindex="1"/>
+		</div>
+	</form>
+{% endblock %}
